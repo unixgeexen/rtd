@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Introduction &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git managed script environments" href="git.managed.script.environment.html" />
+    <link rel="prev" title="FreeCAD Drawing" href="freecad.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Git Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-git-diagram">Test Git Diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Git Introduction</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/git.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="git-introduction">
+<h1>Git Introduction<a class="headerlink" href="#git-introduction" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Info about git</p></li>
+<li><p>Diagrams to describe structure</p></li>
+</ul>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://git-scm.com/book/en/v2">The Git Book</a></p></li>
+<li><p><a class="reference external" href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/user-manual.html#the-workflow">Git User Manual</a></p></li>
+<li><p>Mastering Git - Jakub Nrebski</p></li>
+<li><p>/share/sites/internal.sphinx.tw.chm/docs/source/compinfo/git.rst - converted from tiddlywiki to rst</p></li>
+<li><p><a class="reference external" href="https://www.linuxnix.com/fixing-git-github-merge-conflicts/">fix merge conflicts</a></p></li>
+<li><p><a class="reference external" href="https://www.howtoforge.com/advanced-git-tutorial/">advanced git tutorial</a></p></li>
+<li><p><a class="reference external" href="https://www.linuxfoundation.org/blog/blog/classic-sysadmin-how-to-run-your-own-git-server">Run your own git server</a></p></li>
+</ul>
+</section>
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>DirName=’git’;mkdir -p $DirName;cd $DirName;git init –bare random.git #create a new local repo</p></li>
+</ul>
+<p>.gitconfig</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">user</span><span class="p">]</span>
+  <span class="n">name</span> <span class="o">=</span> <span class="n">Bob</span> <span class="n">Hacker</span>
+      <span class="n">email</span> <span class="o">=</span> <span class="n">bob</span><span class="nd">@company</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Clone from my repository and start working: git clone <a class="reference external" href="https://git.company.com/random">https://git.company.com/random</a> ; cd random ; git status</p></li>
+<li><dl class="simple">
+<dt>setup my identification</dt><dd><ul>
+<li><p>git config –global user.name unixgeexen</p></li>
+<li><p>git config –global user.email <a class="reference external" href="mailto:unixgeexen&#37;&#52;&#48;gmail&#46;com">unixgeexen<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="test-git-diagram">
+<h2>Test Git Diagram<a class="headerlink" href="#test-git-diagram" title="Link to this heading"></a></h2>
+<p>Test Git diagram</p>
+<figure class="kroki kroki-graphviz align-default" id="id1">
+<img alt=" digraph G {              fontname=&quot;Helvetica,Arial,sans-serif&quot;              node [fontname=&quot;Helvetica,Arial,sans-serif&quot;]              edge [fontname=&quot;Helvetica,Arial,sans-serif&quot;]               subgraph cluster_0 {                      style=filled;                      color=lightgrey;                      node [style=filled,color=white];                      R0 -&gt; R1 -&gt; R2 -&gt; R3;                      label = &quot;Remote Repo&quot;;              }               subgraph cluster_1 {                      node [style=filled];                      S0 -&gt; S1;                      S1 -&gt; D1 [label = &quot;git branch dev&quot;];                      S1 -&gt; M1 [label = &quot;git branch main&quot;];                      D3 -&gt; S2 [label = &quot;git merge&quot;] ;                      M4 -&gt; S2 [label = &quot;git merge&quot;] ;                      label = &quot;Local Staging&quot;;                      color=blue                      subgraph cluster_6 {                              node [style=filled];                              label = &quot;Branch dev&quot;;                              D1 -&gt; D2 -&gt; D3;                      }                      subgraph cluster_5 {                              node [style=filled];                              label = &quot;Branch main&quot;;                              M1 -&gt; M2 -&gt; M3 -&gt; M4;                      }              }              subgraph cluster_4 {                      node [style=filled];                      color=orange                      label = &quot;Working&quot;;                      subgraph cluster_3 {                              node [style=filled];                              T0;T1;T2;T3;                              label = &quot;Tracked&quot;;                              color=yellow                      }                      subgraph cluster_2 {                              node [style=filled];                              U0;U2;U3;                              U1 -&gt; U1 [label = &quot;edit&quot;];                              U0 -&gt; U0 [label = &quot;touch&quot;];                              label = &quot;Untracked&quot;;                              color=red                      }                      U1 -&gt; T1 [label=&quot;git add&quot;];                      T2 -&gt; U2 [label=&quot;git rm&quot;];              }              start -&gt; R0;              start -&gt; S0;              start -&gt; T0;               R0 -&gt; S0 [label=&quot;git pull&quot;];              S1 -&gt; R1 [label=&quot;git push&quot;];              M3 -&gt; T0 [label=&quot;git checkout main&quot;];              M3 -&gt; T2 [label=&quot;git checkout main&quot;];              M3 -&gt; T3 [label=&quot;git checkout main&quot;];              T0 -&gt; M4 [label=&quot;git commit&quot;];              T1 -&gt; M4 [label=&quot;git commit&quot;];              T3 -&gt; M4 [label=&quot;git commit&quot;];                start [shape=Mdiamond];   }" class="kroki kroki-graphviz" src="../_images/kroki-20affbd4db1021a5b3f064a5099750796392c86c.svg" />
+<figcaption>
+<p><span class="caption-text">Git History</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="freecad.html" class="btn btn-neutral float-left" title="FreeCAD Drawing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git.managed.script.environment.html" class="btn btn-neutral float-right" title="Git managed script environments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

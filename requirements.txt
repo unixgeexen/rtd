@@ -1,0 +1,3 @@
+setuptools
+sphinx-rtd-theme
+sphinxcontrib-kroki

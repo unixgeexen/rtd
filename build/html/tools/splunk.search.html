@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Searching Splunk &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tiddlywiki" href="tiddlywiki.html" />
+    <link rel="prev" title="Splunk Fundamentals 1" href="splunk.fundamentals1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Searching Splunk</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#course-introducion">Course Introducion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#searching-machine-data">Searching Machine data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#splunk-search-basics">Splunk Search basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-field-searches">Using Field Searches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Searching Splunk</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/splunk.search.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="searching-splunk">
+<h1>Searching Splunk<a class="headerlink" href="#searching-splunk" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Pluralsight: Performing basic splunk searches - Thomas Henson</p></li>
+</ul>
+<section id="course-introducion">
+<h2>Course Introducion<a class="headerlink" href="#course-introducion" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Basic searches</p></li>
+<li><p>Field search basics</p></li>
+<li><p>Splunk Processing Language (SPL)</p></li>
+<li><p>Transformative Searches in Splunk</p></li>
+<li><p>Beyond splunk search Lookup</p></li>
+</ul>
+</section>
+<section id="searching-machine-data">
+<h2>Searching Machine data<a class="headerlink" href="#searching-machine-data" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Large amount of machine data - machine generated</p></li>
+<li><p>Index (bring in data), Search Head, Forwarder (pushes data)</p></li>
+<li><p>Splunk search interface - Add Data, Splunk Apps, Splunk Docs</p></li>
+<li><p>index=prd_osnix appid=a00204</p></li>
+<li><p>splunk data options - semi-structured (RegEx), machine generated, often overlooked (dark data)</p></li>
+<li><dl class="simple">
+<dt>Data source - servers via forwarders, cloud apps, workstations, regex (logs etc)</dt><dd><ul>
+<li><p>splunk generated data Buttercup (sample?)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Index is a name specifying the type of data e.g. titanic</p></li>
+</ul>
+</section>
+<section id="splunk-search-basics">
+<h2>Splunk Search basics<a class="headerlink" href="#splunk-search-basics" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>splunk roles - which roles a user needs, role provides splunk functionalities</dt><dd><ul>
+<li><p>user - create and edit searches owned by the user</p></li>
+<li><p>power user - edit shared object and alerts</p></li>
+<li><p>admin - perform most splunk search functions</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>data storage in splunk</dt><dd><ul>
+<li><dl class="simple">
+<dt>data is indexed as it is ingested and becoming searchable environments</dt><dd><ul>
+<li><p>creates metadata - upload time for data</p></li>
+<li><p>compress data</p></li>
+<li><p>index data</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>bucket management</dt><dd><ul>
+<li><p>bucket like a directory by age of data</p></li>
+<li><p>division is based on data size</p></li>
+<li><p>bucket allocation depends on performance and data size</p></li>
+<li><p>performance requirements</p></li>
+<li><p>storage requirements</p></li>
+<li><p>splunk cluster size</p></li>
+<li><dl class="simple">
+<dt>lifecycle (defined when creating new index)</dt><dd><ul>
+<li><p>hot bucket (home path) e.g. 24hr</p></li>
+<li><p>warm bucket (home path) (3 months) - what you need fast access to</p></li>
+<li><p>cold bucket (cold path) (3+ months) - slower storage</p></li>
+<li><p>frozen bucket (thawed path) (1 yr) - end state of our data - need to thaw to access it</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="using-field-searches">
+<h2>Using Field Searches<a class="headerlink" href="#using-field-searches" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Search Bar and Timeline</p></li>
+<li><p>Search Field Operators</p></li>
+<li><p>Navigate search sidebar</p></li>
+<li><p>Analyze search result field</p></li>
+<li><p>Best practices for search</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="splunk.fundamentals1.html" class="btn btn-neutral float-left" title="Splunk Fundamentals 1" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tiddlywiki.html" class="btn btn-neutral float-right" title="Tiddlywiki" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreeCAD Drawing &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Git Introduction" href="git.html" />
+    <link rel="prev" title="Diagram Design" href="diagram.design.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FreeCAD Drawing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#questions-and-research">Questions and research</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concepts">Concepts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workbenches">Workbenches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#camper-trailer">Camper Trailer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#python-bike">Python Bike</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">FreeCAD Drawing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/freecad.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="freecad-drawing">
+<h1>FreeCAD Drawing<a class="headerlink" href="#freecad-drawing" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Using <a class="reference external" href="#FreeCAD">FreeCAD</a> a parametric drawing design tool</p></li>
+<li><p><a class="reference external" href="https://www.freecadweb.org/wiki/">Product Wiki</a></p></li>
+<li><p><a class="reference external" href="https://www.freecadweb.org/wiki/Manual:Introduction">Product Manual</a></p></li>
+<li><p><a class="reference external" href="https://www.freecadweb.org/wiki/External_workbenches">External workbenches information</a> and <a class="reference external" href="https://github.com/FreeCAD/FreeCAD-addons">Addons project</a></p></li>
+<li><p>Primarily a 3D modelling application, 2D tools available but not as advanced as other tools</p></li>
+</ul>
+</section>
+<section id="questions-and-research">
+<h2>Questions and research<a class="headerlink" href="#questions-and-research" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Is it a good idea to build up components for reuse</p></li>
+<li><p>Do you want components for multiple projects or specific to a given type</p></li>
+<li><p>How to use part design workbench - tutorial</p></li>
+<li><p>How do you handle moving parts - constraints - e.g. bike/person interaction</p></li>
+</ul>
+</section>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>FreeCAD modules - every App object has a Gui object</dt><dd><ul>
+<li><dl class="simple">
+<dt>App - access object defining properties - vector</dt><dd><ul>
+<li><p>e.g. width, length, height</p></li>
+<li><p>contains all code to run in console mode (no GUI)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Gui - control presentation of objects on the screen</dt><dd><ul>
+<li><p>e.g. face colour, drawing mode</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Part</dt><dd><ul>
+<li><dl class="simple">
+<dt>Geometry - building block of topological objects e.g. line, circle</dt><dd><ul>
+<li><p>makeLine((0,0,0),(10,0,0))</p></li>
+<li><p>line=Part.LineSegment(vec1,vec2)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Topology (Shape) - wire, edge, vertex</dt><dd><ul>
+<li><p>edge=line.toShape()</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Shape Modification</dt><dd><ul>
+<li><p>Translate (translate) - move from one place to another</p></li>
+<li><p>Rotate (rotate) - rotate by an angle around a rotation point or axis</p></li>
+<li><p>Matrix - use matrices to translate, rotate and/or scale an object</p></li>
+<li><p>Scale (scale) - scale can be done non-uniformly</p></li>
+<li><p>Subtraction (cut) - remove one shape from another</p></li>
+<li><p>Intersection (common) - the intersection between two shapes</p></li>
+<li><p>Union (fuse) - combination of two shapes</p></li>
+<li><p>Section (section) - intersection between a solid and a plane</p></li>
+<li><p>Extrusion (extrude) - pushing a flat shape into a solid</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Selection (getSelection) - iterate over objects and their subelements</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Objects</dt><dd><ul>
+<li><p>Document - contains geometry and can be saved to a file</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="workbenches">
+<h2>Workbenches<a class="headerlink" href="#workbenches" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Sketcher for working with geometry-constrained sketches.</dt><dd><ul>
+<li><p>Normally used to create the sketch and then processed with Part Design to extrude and create a basic solid</p></li>
+<li><p>Build/edit complex 2D objects (sketches)</p></li>
+<li><p>Precise positioning and relationships with contraints</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Part Design for building Part shapes from sketches - parametric, feature editing methodology</dt><dd><ul>
+<li><p>sequentially transform basic solid</p></li>
+<li><p>advanced tools to build solid parts</p></li>
+<li><p>has same tools as Sketcher</p></li>
+<li><p>it can only produce solid parts</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Part for working with CAD parts - uses CSG (constuctive solid geometry) methodology.</dt><dd><ul>
+<li><p>solid parts - cube and sphere primitives</p></li>
+<li><p>simple geometric and boolean operations</p></li>
+<li><p>foundation of freecad geometry system</p></li>
+<li><p>most other workbenches produce part-based geometry</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Spreadsheet for creating and manipulating spreadsheet data. - can be referred to from within <a class="reference external" href="#FreeCAD">FreeCAD</a> allowing use as master data structures</dt><dd><ul>
+<li><p>see alias manager for setting aliases</p></li>
+<li><p>create spreadsheet in libre calc, save as csv, import to freecad - seems to have limited spreadsheet editing facilities within freecad</p></li>
+<li><dl class="simple">
+<dt>cells can have a name which can be used in any field supported by the expressions engine</dt><dd><ul>
+<li><p>name by RC cell/Properties/Alias</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>whilst limited in functionality it has the basics of formulas</p></li>
+<li><dl class="simple">
+<dt>spreadsheet can retrieve values from properties of objects within the document</dt><dd><ul>
+<li><p>properties are in the property editor window in the data tab</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>cannot have circular dependencies - e.g. object dependent on a spreadsheet and another part of the spreadsheet dependent on the same object</dt><dd><ul>
+<li><p>must create two spreadsheets to get around this</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>can set values of objects - select object/select property value cell/select expression editor/reference spreadsheet value (<a class="reference external" href="#InternalSpreadsheetName">InternalSpreadsheetName</a>.<a class="reference external" href="#CellName">CellName</a>)</p></li>
+<li><p>can be referenced by Python scripts</p></li>
+<li><p>Review expressions engine</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>FEM provides Finite Element Analysis (FEA) workflow.</p></li>
+<li><p>Mesh for working with polygonal meshes. - convert to and from Part</p></li>
+<li><p>TechDraw is the more advanced and feature-rich successor of Drawing</p></li>
+<li><p>Drawing was used for displaying your 3D work on a 2D sheet but has now been deprecated, it is still needed to read old <a class="reference external" href="#FreeCAD">FreeCAD</a> files that contain a Drawing object originally made with this workbench. See <a class="reference external" href="#TechDraw">TechDraw</a> Workbench, which is a more advanced replacement.</p></li>
+<li><p>Creation and manipulation of 2D drawing sheets</p></li>
+<li><p>Display 2D views of 3D work</p></li>
+<li><p>Export to SVG, DXF, PDF for printing etc</p></li>
+<li><dl class="simple">
+<dt>Draft contains 2D tools and basic 2D and 3D CAD operations.</dt><dd><ul>
+<li><p>basic 2D CAD drafting tasks - lines circles</p></li>
+<li><p>actions lie move, rotate, scal</p></li>
+<li><p>drawing tools like grid and snapping</p></li>
+<li><p>principally meant to draw the guidelines for Arch objects</p></li>
+<li><p><a class="reference external" href="#FreeCAD">FreeCAD</a>’s swiss army knive</p></li>
+<li><p>Can convert draft objects to sketches and then used in part design</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Start Center allows you to quickly jump to one of the most common workbenches.</p></li>
+<li><p>Surface workbench provides tools to create and modify surfaces. It is similar as the Part Shape builder Face from edges.</p></li>
+<li><p>Test Framework is for debugging <a class="reference external" href="#FreeCAD">FreeCAD</a>.</p></li>
+<li><p>Web provides you with a browser window instead of the 3D-View within <a class="reference external" href="#FreeCAD">FreeCAD</a>.</p></li>
+<li><p>OpenSCAD for interoperability with <a class="reference external" href="#OpenSCAD">OpenSCAD</a> and repairing Constructive Solid Geometry (CSG) model history.</p></li>
+<li><p>Path is used to produce <a class="reference external" href="#G-Code">G-Code</a> instructions. It is still in a stage of development.</p></li>
+<li><p>Plot is used to edit and save output plots created from other modules and tools.</p></li>
+<li><p>Points for working with point clouds.</p></li>
+<li><p>Raytracing for working with ray-tracing (rendering)</p></li>
+<li><p>Reverse Engineering is intended to provide specific tools to convert shapes/solids/meshes into parametric <a class="reference external" href="#FreeCAD-compatible">FreeCAD-compatible</a> features. (under development)</p></li>
+<li><p>Robot for studying robot movements.</p></li>
+<li><p>Ship <a class="reference external" href="#FreeCAD-Ship">FreeCAD-Ship</a> works over Ship entities, that must be created on top of provided geometry.</p></li>
+<li><dl class="simple">
+<dt>Arch for working with architectural elements.</dt><dd><ul>
+<li><p>Create BIM objects or give BIM attributes to obects from other workbenches and export them to IFC (Industrial Foundation Classes)</p></li>
+<li><p>BIM (Building information modeling) projects (civil engineering and architecture)</p></li>
+<li><p>Contains all tools from Draft workbench</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Image for working with bitmap images.</p></li>
+<li><p>Inspection is made to give you specific tools for examination of shapes. It is still in development.</p></li>
+<li><dl class="simple">
+<dt>Some external workbenches <a class="reference external" href="https://github.com/FreeCAD/FreeCAD-addons">also see</a></dt><dd><ul>
+<li><p>Drawing Dimensioning tools to work directly on Drawing Sheets and allow you to add dimensions, annotations and other technical symbols with great control over their aspect.</p></li>
+<li><p>Fasteners a wide range of ready-to-insert fasteners objects like screws, bolts, rods, washers and nuts. Many options and settings are available.</p></li>
+<li><p>Assembly2 tools to mount and work with assemblies.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="camper-trailer">
+<h2>Camper Trailer<a class="headerlink" href="#camper-trailer" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use Input Spreadsheet</p></li>
+<li><p>Probably have separate drawings for canvas and trailer - perhaps even separate drawings for trailer and camper parts</p></li>
+<li><p>Use sketcher to build basic structure with constraints</p></li>
+<li><p>For improved performance use geometric constraints</p></li>
+<li><p>Try connect a sweep macro to build solids out of lines for framework</p></li>
+<li><p>Then use part design if necessary</p></li>
+</ul>
+</section>
+<section id="python-bike">
+<h2>Python Bike<a class="headerlink" href="#python-bike" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Use Input Spreadsheet</dt><dd><ul>
+<li><p>Person measurements</p></li>
+<li><p>Fixed bike measurements</p></li>
+<li><p>Can you do angles in spreadsheets</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Create person drawing</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Tower frame <a class="reference external" href="https://www.youtube.com/watch?v=Fil77xovYy0">youtube</a></dt><dd><ul>
+<li><p>new file</p></li>
+<li><p>sketcher workbench</p></li>
+<li><p>new sketch</p></li>
+<li><p>create legs - lines</p></li>
+<li><p>set constaints</p></li>
+<li><p>set distance between bottom poiints</p></li>
+<li><p>distance between top two points</p></li>
+<li><p>set angle to 80 degrees</p></li>
+<li><p>make diagonals with polyline</p></li>
+<li><p>set constraints</p></li>
+<li><p>close sketch</p></li>
+<li><p>select sketch set angle to -80degrees same as other angles</p></li>
+<li><p>use macro options - <a class="reference external" href="https://www.youtube.com/redirect?redir_token=TIK2YV7ZJb_O0PKHVmB_Zw8ApJh8MTU1NjUxMTM1OEAxNTU2NDI0OTU4&amp;q=https%3A%2F%2Fwww.freecadweb.org%2Fwiki%2FMacro_Connect_And_Sweep&amp;v=Fil77xovYy0&amp;event=video_description">macro connect and sweep</a></p></li>
+<li><p>select two endpoints and create solid</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="diagram.design.html" class="btn btn-neutral float-left" title="Diagram Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-right" title="Git Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

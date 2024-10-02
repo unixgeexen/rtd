@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>X Keyboard Extension (xkb) &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Hardware" href="../hardware/index.html" />
+    <link rel="prev" title="Vim" href="vim.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">X Keyboard Extension (xkb)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modal-keyboard-based-on-an-escape-key">Modal Keyboard based on an escape key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#keycode-translation">Keycode Translation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#definitions">Definitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#specification">Specification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#translation">Translation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xkb-file-layout">xkb file layout</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#implementation-and-investigation-commands">Implementation and Investigation Commands</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">X Keyboard Extension (xkb)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/xkb.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="x-keyboard-extension-xkb">
+<h1>X Keyboard Extension (xkb)<a class="headerlink" href="#x-keyboard-extension-xkb" title="Link to this heading"></a></h1>
+<p>Translates keyboard codes into key functions. xmodmap was an older equivalent with lower function.</p>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://wiki.archlinux.org/title/X_keyboard_extension">Arch Linux xkb</a></p></li>
+<li><p><a class="reference external" href="https://www.x.org/releases/current/doc/xorg-docs/input/XKB-Enhancing.html">Enhance xkb - Pascal &amp; Toman</a></p></li>
+<li><p><a class="reference external" href="https://web.archive.org/web/20190724015820/http://pascal.tsu.ru:80/en/xkb/">Pascal xkb Extension - Wayback</a></p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;damko/a-simple-humble-but-comprehensive-guide-to-xkb-for-linux-6f1ad5e13450">Good practical example with code</a></p></li>
+<li><p><a class="reference external" href="https://help.ubuntu.com/community/Custom%20keyboard%20layout%20definitions">ubuntu community</a></p></li>
+<li><p><a class="reference external" href="https://www.charvolant.org/doug/xkb/html/node5.html">Excellent description - charvolant - firefox WARNING</a></p></li>
+<li><dl class="simple">
+<dt>Files</dt><dd><ul>
+<li><p>/usr/share/X11/xkb</p></li>
+<li><p>/etc/default/keyboard - options to pass to xkb</p></li>
+<li><p>/etc/X11/xorg.conf OR find /usr/share/X11 -name “*.conf” - configuration for X service</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="modal-keyboard-based-on-an-escape-key">
+<h2>Modal Keyboard based on an escape key<a class="headerlink" href="#modal-keyboard-based-on-an-escape-key" title="Link to this heading"></a></h2>
+<p>Use the semicolon (or some specified key e.g. backslash ) as an escape key which allows full functionality for limited key usage (by choice or because of low keycount keyboard).  Achieved by applying modal concept to key entry.</p>
+<p>Usage:</p>
+<ul class="simple">
+<li><p>;; - results in a single semicolon</p></li>
+<li><dl class="simple">
+<dt>;&lt;key&gt; - escapes normal operation of &lt;key&gt; to provide modes and other special operation</dt><dd><ul>
+<li><dl class="simple">
+<dt>sticky modes - switch on/off</dt><dd><ul>
+<li><p>sticky function keys</p></li>
+<li><p>window management</p></li>
+<li><p>menu management</p></li>
+<li><p>application modes???</p></li>
+<li><p>mouse movement/action</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>quick modes</dt><dd><ul>
+<li><dl class="simple">
+<dt>function and other keys - single key</dt><dd><ul>
+<li><p>1-0 to + - Fn key</p></li>
+<li><p>hjkl - vim direction keys</p></li>
+<li><p>page movement - page up(u), down(d), home(s), end(e)</p></li>
+<li><p>insert(i), delete(x), backspace(b)</p></li>
+<li><p>ctrl(c), alt(a), meta(m) - incorporate with sticky keys in OS</p></li>
+<li><p>application leader - tmux(t), vi/vim(v)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>howto</dt><dd><ul>
+<li><p>repeat keys - arrow, paging</p></li>
+<li><p>make use of shifted keys - repeats?, stronger action</p></li>
+<li><p>a key to show current mode/status</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="keycode-translation">
+<h2>Keycode Translation<a class="headerlink" href="#keycode-translation" title="Link to this heading"></a></h2>
+<section id="definitions">
+<h3>Definitions<a class="headerlink" href="#definitions" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>keycode/keyboard scan code - code sent from keyboard to X</dt><dd><ul>
+<li><p>names - traditional meanings e.g. &lt;SPCE&gt; for space bar</p></li>
+<li><p>relative position - e.g &lt;AE01&gt; ! on US keyboards</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>group - max 4, usually reprepsents a layout e.g. US-English - defined in symbols</p></li>
+<li><p>symbols - key values used within X</p></li>
+<li><p>state - encodes 8bits of modifiers (0&gt;8) - Shift, Lock, Control, Mod1, Mod2, Mod3, Mod4, Mod5</p></li>
+<li><p>keysym</p></li>
+<li><dl class="simple">
+<dt>action - single action can be triggered e.g. set or lock modifier bit</dt><dd><ul>
+<li><p>(keysym, state) &gt; action</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>type - which keys are affected by modifiers e.g. TWO_LEVEL</dt><dd><ul>
+<li><p>e.g. (state, TWO_LEVEL) &gt; level = ((state &gt;&gt; 0) &amp; 0x01) = state &amp; 0x01 i.e. 0 or 1</p></li>
+<li><p>S[keycode][0..4][0..1] instead of possible S[keycode][0..4][0..256]</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>modifier bits - affect/are the state? Shift, Lock, Control and Mod1-Mod5 e.g. Mod1, Mod2 can be given a name Alt, Meta using virtual modifiers</p></li>
+</ul>
+</section>
+<section id="specification">
+<h3>Specification<a class="headerlink" href="#specification" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>symbols</dt><dd><ul>
+<li><p>name[Groupn]= “GroupName”;</p></li>
+<li><p>shortform: key &lt;keycode&gt; { [Group1Level1,Group1Level2], [Group2Level1,Group2Level2]};</p></li>
+<li><p>longform: key &lt;keycode&gt; { symbols[Group1] = [Level1,Level2], symbols[Group2] = [Level1,Level2]};</p></li>
+<li><p>partial (overrides to selected group/level): key &lt;AD01&gt; { [], [], [ q, Q ] };</p></li>
+<li><p>types: key &lt;keycode&gt; { type=&lt;typename&gt; , … }</p></li>
+<li><p>virtual modifiers: key &lt;keycode&gt; { symbols …, virtualMods=&lt;virtmodname&gt; };</p></li>
+<li><p>control keys: modifier_map &lt;modifiername&gt; { &lt;symbol&gt;, &lt;symbol&gt;, …};</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>types</dt><dd><ul>
+<li><dl class="simple">
+<dt>type &lt;typename&gt; { modifiers, map, level_name};</dt><dd><ul>
+<li><p>modifiers - modifiers= &lt;modifier1&gt;+&lt;modifier2&gt; …; # modifiers considered for this type</p></li>
+<li><p>map - map[&lt;modifier&gt;] - &lt;level_name&gt;; # level_name is active when modifier active</p></li>
+<li><p>level_name - level_name[&lt;levelname&gt;] = “&lt;displayname&gt;” - gives level a user friendly name</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>compat</dt><dd><ul>
+<li><dl class="simple">
+<dt>default xkb_compatibility “&lt;compatname&gt;” { virtual_modifiers &lt;modifiername&gt;,&lt;modifiername&gt;…;</dt><dd><ul>
+<li><p>virtual_modifiers - which virtual modifiers might be set or examined</p></li>
+<li><p>interpret &lt;keyname&gt;+AnyOf(&lt;key&gt;+&lt;key&gt;…) {action= &lt;actionname&gt;(modifiers=&lt;key&gt;)} # which modifier key triggers action</p></li>
+<li><p>indicator &lt;indicatorname&gt; { whichModState= ; modifiers- ;}; # conditions to light indicator</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>virtual modifier: virtual_modifiers &lt;modifiername&gt;;</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="translation">
+<h3>Translation<a class="headerlink" href="#translation" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Overall (keycode, group, state) &gt; keysym[,action]</p></li>
+<li><dl class="simple">
+<dt>Internally</dt><dd><ul>
+<li><p>types: (keycode [,group] &gt; type</p></li>
+<li><p>types: (state, type) &gt; level</p></li>
+<li><p>symbols: (keycode, group, level) &gt; S[keycode][group][level]</p></li>
+<li><p>compat: keysym &gt; action</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="xkb-file-layout">
+<h3>xkb file layout<a class="headerlink" href="#xkb-file-layout" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>xkb_keycodes - define symbolic keylabels associated with keycode for use in rest of file</p></li>
+<li><dl class="simple">
+<dt>xkb_types - define the types e.g. modifiers= Shift+NumLock+LevelThree; map[Shift+LevelThree]= Level4;</dt><dd><ul>
+<li><p>ONE_LEVEL - not affected by modifiers e.g enter, space, escape, Fn, shift, alt, ctrl …</p></li>
+<li><p>TWO_LEVEL - keysym affected by modifier state</p></li>
+<li><p>ALPHABETIC - like TWO_LEVEL but also affected by capslock</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>xkb_compatibility (compat) - action definitions (interpret) and keyboard LEDs (inidicator) - internal behaviour of modifiers</dt><dd><ul>
+<li><p>action types - set (while key is pressed), latch (until next key pressed), lock (until unlocked), mouse</p></li>
+<li><p>action destination - modifier state, group, controls, mouse movement/buttons</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>xkb_symbols - define key -</dt><dd><ul>
+<li><p>key &lt;keylabel&gt; { ‘G&lt;GroupNum&gt;L&lt;LevelNum&gt;, … }</p></li>
+<li><p>key &lt;…&gt; { type = “T”, [ …. ], [ …. ] };</p></li>
+<li><p>key &lt;…&gt; { type[1] = “T1”, type[2] = “T2”, [ … ], [ … ] };</p></li>
+<li><p>name[1] = “EN”; # set group names</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>xkb_geometry - not required - diagram of keyboard</p></li>
+<li><dl class="simple">
+<dt>grouping components</dt><dd><ul>
+<li><p>semantics - named types of types and compat components (not used often)</p></li>
+<li><p>key maps - named map specifying includes of each main type</p></li>
+<li><p>rules - user oriented specification based on matching names (for more unusual keyboards) - available layouts and variants (children)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section id="implementation-and-investigation-commands">
+<h2>Implementation and Investigation Commands<a class="headerlink" href="#implementation-and-investigation-commands" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>xkbcomp - xkb compiler - manipulate xkb data</dt><dd><ul>
+<li><p>xkbcomp $DISPLAY output,xkb - get current configuration</p></li>
+<li><p>xkbcomp input.xkb $DISPLAY - upload to current configuration</p></li>
+<li><p>xkbcomp input.xkb - check syntax and create .xkm file</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>load on startup</dt><dd><ul>
+<li><p>save a layout as ~/.Xkeymap</p></li>
+<li><p>load on startup ~/.xinitrc: test -f ~/.Xkeymap &amp;&amp; xkbcomp ~/.Xkeymap $DISPLAY</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>xev - display keycodes and troubleshoot layout</dt><dd><ul>
+<li><p>xev -event keyboard # shows extensive information about keyboard events - code, state …</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>setxkbmap</dt><dd><ul>
+<li><p>setxkbmap -layout us # load a layout on the fly</p></li>
+<li><p>setxkbmap -layout us,us -variant ,dvorak # set us layout with dvorak variant</p></li>
+<li><p>setxkbmap -print -verbose 10 # show current variant</p></li>
+<li><p>setxkbmap -layout us,us -variant ,dvorak -option # reset options</p></li>
+<li><p>setxkbmap -layout us,us -variant ,dvorak -option “lv3:rwin_switch,grp:alt_space_toggle” # set options</p></li>
+<li><p>xmodmap -e “keycode 66 = Escape” # simpler bypass xkb to map CapsLock to Esc</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vim.html" class="btn btn-neutral float-left" title="Vim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../hardware/index.html" class="btn btn-neutral float-right" title="Hardware" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

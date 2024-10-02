@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Splunk Fundamentals 1 &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Searching Splunk" href="splunk.search.html" />
+    <link rel="prev" title="Sphinx RTD Starter" href="sphinx.starter.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Splunk Fundamentals 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#five-main-functions-of-splunk">Five main functions of splunk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#three-main-building-blocks">Three main building blocks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scaling">Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-splunk">Installing splunk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-data-in">Getting data in</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#monitor-option">monitor option</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-searching">basic searching</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Splunk Fundamentals 1</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/splunk.fundamentals1.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="splunk-fundamentals-1">
+<h1>Splunk Fundamentals 1<a class="headerlink" href="#splunk-fundamentals-1" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>From org2020 free course</p></li>
+</ul>
+<section id="five-main-functions-of-splunk">
+<h2>Five main functions of splunk<a class="headerlink" href="#five-main-functions-of-splunk" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Index data - data tagged with source type, normalised</p></li>
+<li><p>Search and Investigate - search based on index - splunk search language</p></li>
+<li><p>Add knowledge</p></li>
+<li><p>Monitor and alert</p></li>
+<li><p>Report and analyze - single pane of glass</p></li>
+</ul>
+</section>
+<section id="three-main-building-blocks">
+<h2>Three main building blocks<a class="headerlink" href="#three-main-building-blocks" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>indexer - directories with data by age</p></li>
+<li><p>search head - splunk search language - distribute request to indexer, enhance result, dashboard, report, visualisation</p></li>
+<li><p>forwarder - forwards data - generally on source server</p></li>
+</ul>
+</section>
+<section id="scaling">
+<h2>Scaling<a class="headerlink" href="#scaling" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>single instance deployment - input, parsing, indexing, searching</p></li>
+<li><p>additional specific components - search head, indexers and forwarders</p></li>
+<li><p>clustering of components</p></li>
+</ul>
+</section>
+<section id="installing-splunk">
+<h2>Installing splunk<a class="headerlink" href="#installing-splunk" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>single instance deployment</p></li>
+<li><p>free splunk &#64; splunk.com</p></li>
+<li><p>splunk enterprise</p></li>
+<li><p>download now</p></li>
+<li><p>/opt/splunk/bin - splunk start/stop/restart/help</p></li>
+<li><p>go to displayed splunk web site</p></li>
+<li><p>splunk cloud - free cloud trial</p></li>
+</ul>
+<p>apps - preconfigured environments - workspaces for specific use cases
+roles - what a user is able to see, do and interact with - administrator, power, user</p>
+</section>
+<section id="getting-data-in">
+<h2>Getting data in<a class="headerlink" href="#getting-data-in" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>types of data input - by admin user</p></li>
+<li><p>many ways to get data in</p></li>
+<li><p>add data in home app, settings drop down</p></li>
+<li><p>upload - unchanging data, monitor - files, directories, scripts, ports, forward - receive from external forwarder (main source in most production environments)</p></li>
+<li><p>source type - categorise type of data, pre trained source types</p></li>
+<li><p>app context - which app to apply a source type to (system - system wide)</p></li>
+<li><p>set index - directory where data is stored - generally split data into different index - limit data search, data retention, data access</p></li>
+</ul>
+<section id="monitor-option">
+<h3>monitor option<a class="headerlink" href="#monitor-option" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>source to use</p></li>
+</ul>
+</section>
+</section>
+<section id="basic-searching">
+<h2>basic searching<a class="headerlink" href="#basic-searching" title="Link to this heading"></a></h2>
+<p>search and reporting app
+components
+splunk bar
+app bar
+search bar
+time range picker
+how to
+what to search - data summary - source type, host,</p>
+<p>using the search bar - limit by time to limit search data
+save as - to knowledge objects
+patterns - see patterns in data
+statistics - if produced
+visualisations - if produced
+transforming commands - create statistics or visualisations
+search job remains active for 10 minutes by default, share search 7 days
+export in various formats
+fast, verbose or smart search modes</p>
+<p>wild cards are an option in search AND, OR, NOT
+fail* NOT password
+can use parentheses
+“exact phrases”
+escapes “</p>
+<p>from org2020 launchpad
+* app - appids
+* indexes - prd_syslog
+* sourcetypes - netstat
+* hosts - active hosts</p>
+<p>field sidebar all fields discovered at indexing
+selected fields - most important
+interesing - at least 20% populated
+fields preceded by field type
+can add field to selected fields list
+all fields link or more fields show all fields - get statistics
+field names - case sensitive - values are not
+various operators for fields = != &gt; &lt; or NOT host=mail*
+status IN (“500”,”503”,”505”)</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sphinx.starter.html" class="btn btn-neutral float-left" title="Sphinx RTD Starter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="splunk.search.html" class="btn btn-neutral float-right" title="Searching Splunk" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

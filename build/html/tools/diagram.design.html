@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagram Design &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FreeCAD Drawing" href="freecad.html" />
+    <link rel="prev" title="Visual Studio Code" href="VisualStudioCode.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Diagram Design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-tips">Design Tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#diagram-types">Diagram Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#erd-entity-relationship-diagram">ERD - Entity Relationship Diagram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uml-unified-modeling-language">UML - Unified Modeling Language</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rst-sphinx-implementation">RST/Sphinx Implementation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Diagram Design</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/diagram.design.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="diagram-design">
+<h1>Diagram Design<a class="headerlink" href="#diagram-design" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Tips on designing diagrams to elucidate understanding</p></li>
+<li><p>Diagrams to describe structure</p></li>
+<li><p>Diagrams to describe work flow</p></li>
+<li><p>Use of ERD and/or UML - more formalised</p></li>
+<li><p>Blockdiag/Graphviz whilst more intuitive for the non-technical can be more verbose to be more accurate</p></li>
+</ul>
+<section id="design-tips">
+<h2>Design Tips<a class="headerlink" href="#design-tips" title="Link to this heading"></a></h2>
+<p>How to use different diagram types to demonstrate and clarify the subject matter.  Which type of diagram works best to describe structure, workflow etc.</p>
+</section>
+<section id="diagram-types">
+<h2>Diagram Types<a class="headerlink" href="#diagram-types" title="Link to this heading"></a></h2>
+<section id="erd-entity-relationship-diagram">
+<h3>ERD - Entity Relationship Diagram<a class="headerlink" href="#erd-entity-relationship-diagram" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.guru99.com/er-diagram-tutorial-dbms.html">Guru99 ERD tutorial</a></p></li>
+</ul>
+</section>
+<section id="uml-unified-modeling-language">
+<h3>UML - Unified Modeling Language<a class="headerlink" href="#uml-unified-modeling-language" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>References</dt><dd><ul>
+<li><p><a class="reference external" href="https://www.tutorialspoint.com/uml/uml_overview.htm">Tutorials Point UML Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://crashedmind.github.io/PlantUMLHitchhikersGuide/layout/layout.html">PlantUML Tutorial</a> also good example of RTD on github.io</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Fundamental object-oriented concepts</dt><dd><ul>
+<li><p>Objects − represent an entity</p></li>
+<li><p>Class − blue print of an object.</p></li>
+<li><p>Abstraction − behavior of an real world entity.</p></li>
+<li><p>Encapsulation − binding the data together and hiding them from the outside world.</p></li>
+<li><p>Inheritance − making new classes from existing ones.</p></li>
+<li><p>Polymorphism − existence in different forms.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Building Blocks</dt><dd><ul>
+<li><dl class="simple">
+<dt>Things</dt><dd><ul>
+<li><p>Structural - static - class, interface, collaboration, use case, component, node</p></li>
+<li><p>Behavioural - dynamic - interaction, state machine</p></li>
+<li><p>Grouping - grouping - package</p></li>
+<li><p>Annotational - remarks, description, comments - note</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Relationships - associations between elements</dt><dd><ul>
+<li><p>Dependency - change in one element affects the other</p></li>
+<li><p>Association - element connections and counts</p></li>
+<li><p>Generalisation - connection from generalised to specialised element</p></li>
+<li><p>Realisation - connection from responsibility element to implementation element</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Diagrams - the output of the process</dt><dd><ul>
+<li><p>Class - abstract components</p></li>
+<li><p>Object - real components, point in time</p></li>
+<li><p>Component - underlying structure of a component - physical s/w - source code, runtime and executables</p></li>
+<li><p>Composite Structure - internal structure of class</p></li>
+<li><p>Deployment - physical resources nodes, components and connections</p></li>
+<li><p>Package - organise elements into related groups to minimise dependecies between packages</p></li>
+<li><p>Profile - extensibility mechanism</p></li>
+<li><p>Activity - flow and relationship of activities/actions, objects used/consumed/produced</p></li>
+<li><p>Use case - functional requirements, actors, relationships</p></li>
+<li><p>Interaction Overview - combination of activity and sequence diagrams</p></li>
+<li><p>Timing - object relationships over time, time left to right</p></li>
+<li><p>State Machine (statechart) - different states of component within the system</p></li>
+<li><p>Communication (Collaboration) - interaction between objects in sequence</p></li>
+<li><p>Sequence - sequence of messages/interactions between actors and objects over time</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Architecture</dt><dd><ul>
+<li><dl class="simple">
+<dt>System perspectives - diagram use case</dt><dd><ul>
+<li><p>Design - classes, interfaces, collaboration - diagrams class, object</p></li>
+<li><p>Implementation - component assembly for complete physical system - diagram component</p></li>
+<li><p>Process - system flow - diagrams class, object</p></li>
+<li><p>Deployment - physical nodes forming hardware - diagram deployment</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Modeling Types</dt><dd><ul>
+<li><p>Structural Modeling - static features, framework - diagrams class, component, deployment</p></li>
+<li><p>Behavioural Modeling - interaction, sequence, flow - diagrams activity, interaction, use case</p></li>
+<li><p>Architectural Modeling - overall framework including structure and behaviour - diagram package</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Basic Notations</dt><dd><ul>
+<li><dl class="simple">
+<dt>Structural</dt><dd><ul>
+<li><p>Class</p></li>
+<li><p>Object</p></li>
+<li><p>Interface</p></li>
+<li><p>Collaboration</p></li>
+<li><p>Use Case</p></li>
+<li><p>Actor</p></li>
+<li><p>Initial State</p></li>
+<li><p>Final State</p></li>
+<li><p>Active Class</p></li>
+<li><p>Component</p></li>
+<li><p>Node</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Behavioural</dt><dd><ul>
+<li><p>Interaction</p></li>
+<li><p>State Machine</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Grouping</dt><dd><ul>
+<li><p>Package</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Annotational</dt><dd><ul>
+<li><p>Note</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Relationships</dt><dd><ul>
+<li><dl class="simple">
+<dt>Instance Level</dt><dd><ul>
+<li><p>Dependency - 2+ elements depend on each other, dashed line/open arrow, unidirectional</p></li>
+<li><dl class="simple">
+<dt>Association - connect 2+ elements in model, solid line/open arrow</dt><dd><ul>
+<li><p>Types - bi-directional, uni-directional, aggregation, reflexive</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Aggregation - “has a”, binary, solid line/open diamond</p></li>
+<li><p>Composition - whole/part relationship, when higher is destroyed so is lower, solid line/closed diamond</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Class Level</dt><dd><ul>
+<li><p>Generalisation/Inheritance - superclass (generalised), subclass (specialised) - hollow triangle on supertype, subclass inherits attributes/methods of superclass</p></li>
+<li><p>Realisation/Implementation/Abstraction - client realises/implements behaviour the supplier specifies - hollow triangle on interface/dashed line (DRY)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>General Relationship</dt><dd><ul>
+<li><p>Dependency - one class depends on another at some point in time e.g. independent class is parameter variable of a method of dependent class</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Multiplicity - 0, 0..1, 1..1, * (zero or more), 1..* (one or more) etc.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<figure class="kroki kroki-plantuml align-default" id="id1">
+<img alt="&#64;startuml Class01 &quot;1&quot; *-- &quot;many&quot; Class02 : composition (contains) Class03 o-- Class04 : aggregation Class05 --&gt; &quot;1&quot; Class06 : association Class07 &lt;|-- Class08 : inheritance Class09 ..&gt; &quot;1&quot; Class10 : dependency Class11 &lt;|.. Class12 : realisation/implementation &#64;enduml" class="kroki kroki-plantuml" src="../_images/kroki-77189fa82fb19def559cc6e1b98249ffa1499a2b.svg" />
+<figcaption>
+<p><span class="caption-text">UML Relationships</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Standard Diagrams</p></li>
+<li><dl class="simple">
+<dt>Class Diagram</dt><dd><ul>
+<li><p>name - meaningful aspect of the system</p></li>
+<li><p>attributes - values describing an instance of the class</p></li>
+<li><p>methods - responsibilities, behavioural features</p></li>
+<li><p>relationships</p></li>
+<li><p>visibility - private(-), public(+), protected(#) subclass, package/default(~)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Object Diagram</dt><dd><ul>
+<li><p>derived from class diagrams - instance of a class, snapshot of point in time</p></li>
+<li><p>class abstract, object concrete</p></li>
+<li><p>name - indicates purpose</p></li>
+<li><p>attribute - state of a particular instance</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Component Diagram</p></li>
+<li><p>Deployment Diagram</p></li>
+<li><p>Use Case Diagram</p></li>
+<li><p>Interaction Diagram</p></li>
+<li><p>State Chart Diagram</p></li>
+<li><p>Activity Diagram</p></li>
+<li><p>Summary</p></li>
+</ul>
+</section>
+</section>
+<section id="rst-sphinx-implementation">
+<h2>RST/Sphinx Implementation<a class="headerlink" href="#rst-sphinx-implementation" title="Link to this heading"></a></h2>
+<p>UML Relationships Diagram</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">kroki</span><span class="p">::</span>
+   <span class="nc">:caption:</span> UML Relationships
+   <span class="nc">:type:</span> plantuml
+
+   @startuml
+   Class01 &quot;1&quot; *-- &quot;many&quot; Class02 : composition (contains)
+   Class03 o-- Class04 : aggregation
+   Class05 --&gt; &quot;1&quot; Class06 : association
+   Class07 &lt;|-- Class08 : inheritance
+   Class09 ..&gt; &quot;1&quot; Class10 : dependency
+   Class11 &lt;|.. Class12 : realisation/implementation
+   @enduml
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="VisualStudioCode.html" class="btn btn-neutral float-left" title="Visual Studio Code" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="freecad.html" class="btn btn-neutral float-right" title="FreeCAD Drawing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

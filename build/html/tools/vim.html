@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vim &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="X Keyboard Extension (xkb)" href="xkb.html" />
+    <link rel="prev" title="Tmux" href="tmux.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Vim</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hints">Hints</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#todo">TODO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concepts">Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#folding">Folding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#buffers-file-plugin-info-has-unique-number-and-a-name">Buffers - file, plugin info - has unique number and a name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#windows-viewport-onto-single-buffer">Windows - viewport onto single buffer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tabs-collection-of-one-or-more-windows">Tabs - collection of one or more windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arguments">Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#register-a-place-where-vim-stores-text">Register - a place where vim stores text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#motions-operators-text-objects">Motions, Operators, Text Objects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modes">Modes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#all-commands-list-https-vimhelp-org-index-txt-html">All commands list https://vimhelp.org/index.txt.html</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overlaying-command-maps">Overlaying command maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quickfix">quickfix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file-explorers">File Explorers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visual-mode">Visual Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registers">Registers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vim-notes-from-usr-txt-manuals">Vim Notes from usr*.txt manuals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#admin">Admin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-usr-txt-manuals">From usr_*.txt manuals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-manuals">using the manuals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-vi-compatibility-set-compatible">check vi compatibility - :set compatible?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Vim</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/vim.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vim">
+<h1>Vim<a class="headerlink" href="#vim" title="Link to this heading"></a></h1>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://awesomeopensource.com/project/mhinz/vim-galore">vim galore</a></p></li>
+<li><p><a class="reference external" href="https://romainl.github.io/the-patient-vimmer/2.html">patient vimmer</a></p></li>
+<li><p><a class="reference external" href="https://spacevim.org/documentation/">interesting layout</a></p></li>
+</ul>
+</section>
+<section id="todo">
+<h2>TODO<a class="headerlink" href="#todo" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>file explorers - nerdtree or generally default <a class="reference external" href="https://shapeshed.com/vim-netrw/">netrw</a></p></li>
+<li><p>fuzzy finder</p></li>
+<li><p>spacevim - layers concept</p></li>
+<li><p>how to use registers</p></li>
+<li><p>folding - <a class="reference external" href="https://www.linux.com/training-tutorials/vim-tips-folding-fun/">Folding Fun</a> <a class="reference external" href="https://learnvimscriptthehardway.stevelosh.com/chapters/48.html">https://learnvimscriptthehardway.stevelosh.com/chapters/48.html</a> <a class="reference external" href="https://learnvimscriptthehardway.stevelosh.com/chapters/49.html">https://learnvimscriptthehardway.stevelosh.com/chapters/49.html</a></p></li>
+<li><p>syntax highlighting - syntastic <a class="reference external" href="https://learnvimscriptthehardway.stevelosh.com/chapters/45.html">https://learnvimscriptthehardway.stevelosh.com/chapters/45.html</a></p></li>
+<li><p>visual mode</p></li>
+<li><p>:h jumplist, :h changelist</p></li>
+</ul>
+</section>
+<section id="concepts">
+<h2>Concepts<a class="headerlink" href="#concepts" title="Link to this heading"></a></h2>
+<section id="folding">
+<h3>Folding<a class="headerlink" href="#folding" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>z action is mostly used for folding</p></li>
+<li><dl class="simple">
+<dt>folds remain for the current editing session except:</dt><dd><ul>
+<li><dl class="simple">
+<dt>saved with :mkview and restored with :loadview</dt><dd><ul>
+<li><p>au BufWinLeave * mkview</p></li>
+<li><p>au BufWinEnter * silent loadview</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>zd - delete fold at cursor</p></li>
+<li><p>zE - delete all folds</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>multiple modes for working with folds (:set foldmethod=indent, :set fdm?)</dt><dd><ul>
+<li><p>manual - (default) - defined with cursor movement etc</p></li>
+<li><p>indent - based on file text indentation</p></li>
+<li><p>syntax - based on file syntax</p></li>
+<li><dl class="simple">
+<dt>marker - based on markers within file - triple brace open ‘{{{’ close ‘}}}’</dt><dd><ul>
+<li><p>set foldmarker=openstring,closestring</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="buffers-file-plugin-info-has-unique-number-and-a-name">
+<h3>Buffers - file, plugin info - has unique number and a name<a class="headerlink" href="#buffers-file-plugin-info-has-unique-number-and-a-name" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>delete - :quit, :bdeleteID</p></li>
+<li><dl class="simple">
+<dt>list - :ls, :ls!, :buffers, :files</dt><dd><ul>
+<li><p>List format - bufnum state name cursorPos</p></li>
+<li><p>states - h (hidden - not display with :ls), a (active), % (current), # (alternate - previous buffer)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>switch buffer - :bID - e.g. :b1, :b# (switch to previous buffer)</p></li>
+<li><p>close/delete buffer - 13,15bd - delete buffers 13,14,15</p></li>
+</ul>
+</section>
+<section id="windows-viewport-onto-single-buffer">
+<h3>Windows - viewport onto single buffer<a class="headerlink" href="#windows-viewport-onto-single-buffer" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>:winc :wincmd can usually replace &lt;c-w&gt;</p></li>
+<li><p>create - :split, :vsplit, :new, :vnew</p></li>
+<li><p>navigate to other windows - &lt;c-w&gt; h|j|k|l</p></li>
+<li><p>navigate windows to other positions - &lt;c-w&gt; H|J|K|L</p></li>
+<li><p>resize window - &lt;c-w&gt; &gt;&lt;+-_|= - wider/narrower/higher/shorter/max height/max width/all equal</p></li>
+<li><p>close window - :clo[se] &lt;c-w&gt; c</p></li>
+<li><p><a class="reference external" href="https://vim.fandom.com/wiki/Switch_between_Vim_window_splits_easily[simplifying">https://vim.fandom.com/wiki/Switch_between_Vim_window_splits_easily[simplifying</a> window movement]</p></li>
+<li><p>open file in existing window</p></li>
+<li><p>open file in new window - :vs[plit] filename, :sp[lit] filename</p></li>
+</ul>
+</section>
+<section id="tabs-collection-of-one-or-more-windows">
+<h3>Tabs - collection of one or more windows<a class="headerlink" href="#tabs-collection-of-one-or-more-windows" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>create - :tabnew, :tabedit FileName</p></li>
+<li><p>navigate - gt,gT - go to next/previous tab</p></li>
+<li><p>move current window to new tab - Ctrl-WT</p></li>
+<li><p>open file in new tab - :tabedit filename</p></li>
+</ul>
+</section>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Link to this heading"></a></h3>
+<ul>
+<li><p>:help argument-list</p></li>
+<li><p>Initially set to set of filenames with which vim was opened</p></li>
+<li><p>Can be modified with :argadd :argdelete :args &lt;FileList&gt;</p></li>
+<li><p>Use case - can operate on multiple files using :argdo</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">args</span> <span class="o">**/*.</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="p">:</span><span class="n">argdo</span> <span class="o">%</span><span class="n">s</span><span class="o">/</span><span class="n">foo</span><span class="o">/</span><span class="n">bar</span><span class="o">/</span><span class="n">ge</span> <span class="o">|</span> <span class="n">update</span> <span class="o">-</span> <span class="n">updates</span> <span class="n">foo</span> <span class="n">to</span> <span class="n">bar</span> <span class="ow">in</span> <span class="nb">all</span> <span class="o">*.</span><span class="n">c</span> <span class="o">*.</span><span class="n">h</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">current</span> <span class="nb">dir</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="register-a-place-where-vim-stores-text">
+<h3>Register - a place where vim stores text<a class="headerlink" href="#register-a-place-where-vim-stores-text" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>TODO</p></li>
+</ul>
+</section>
+<section id="motions-operators-text-objects">
+<h3>Motions, Operators, Text Objects<a class="headerlink" href="#motions-operators-text-objects" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Motions - :h navigation - move cursor - accept count - e.g. hjklwb/</p></li>
+<li><dl class="simple">
+<dt>Operators - :h operator - act on a region of text - accept count e.g. d ~ gU &gt;</dt><dd><ul>
+<li><p>Normal mode - Operator first, then motion</p></li>
+<li><p>Visual mode - Operator acts on selection</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Text Objects - :h text-objects - act on surrounding area (objects) - accept count - e.g. word, sentence, surrounded by parentheses</p></li>
+</ul>
+</section>
+<section id="modes">
+<h3>Modes<a class="headerlink" href="#modes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>:showmode will show the mode when other than normal mode</p></li>
+<li><p>:help mode-switching - help on switching between modes</p></li>
+<li><p>Insert “– INSERT –” - ioa - insert new data into buffer</p></li>
+<li><p>Normal - start mode and return from other modes with ESC- general buffer navigation, normal editor commands</p></li>
+<li><dl class="simple">
+<dt>Visual “– VISUAL –” - movement commands expand selection, non-movement commands executed for highlighted area</dt><dd><ul>
+<li><p>visual mode - v - selection of lines of text</p></li>
+<li><p>visual block mode ctrl-v - selection of column/blocks</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Select “– SELECT –” - like MS-Windows selection mode</p></li>
+<li><p>Command-line/Cmdline - command line at bottom - Ex commands(:), search (?/), filter (!)</p></li>
+<li><p>Ex - like Cmdline but with very limited editing of command line</p></li>
+<li><p>Operator-pending - like Normal mode but vim is waiting for {motion} command to specify the text the operator will function on</p></li>
+<li><p>Replace “– REPLACE –” - special case of Insert but overwrites</p></li>
+<li><p>Virtual Replace “– VREPLACE –” - like replace but replace screen real estate instead of file characters</p></li>
+<li><p>Insert Normal “– (insert) –” - &lt;C-O&gt; from Insert mode - like normal mode but returns to insert mode after executing one vim command</p></li>
+<li><p>Insert Visual “– (insert) VISUAL –” - Visual mode &lt;C-O&gt; v|V|&lt;C-V&gt; - do visual selection and then return to Insert mode</p></li>
+<li><p>Insert Select “– (insert) SELECT –” - Insert mode (start select mode with &lt;S-Right&gt; or mouse drag - when select mode ends return to insert mode</p></li>
+</ul>
+</section>
+</section>
+<section id="all-commands-list-https-vimhelp-org-index-txt-html">
+<h2>All commands list <a class="reference external" href="https://vimhelp.org/index.txt.html">https://vimhelp.org/index.txt.html</a><a class="headerlink" href="#all-commands-list-https-vimhelp-org-index-txt-html" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Also check in your installation at something like /usr/share/vim/vim74/doc</dt><dd><ul>
+<li><p>:scrip[tnames] will give you an idea of where installation files might be</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>:help index - gives a list of all commands within the editor</p></li>
+<li><dl class="simple">
+<dt>quickref may have a list of all commands - index.txt seems better formatted</dt><dd><ul>
+<li><dl class="simple">
+<dt>Format</dt><dd><ul>
+<li><p>Tagged <em>Q_qf</em></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Desired output - tag  - command text, applicable modes, description, vimversion</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<p>Commands</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:version - where is my .vimrc
+:scriptnames
+:!echo $MYVIMRC
+:so $MYVIMRC - re-source vimrc file if you&#39;ve changed it
+:so % - re-source the current file - expect it&#39;s vimrc compatible
+:mkv [file] - create .vimrc from current settings, file defaults to .vimrc, ! to overwrite
+</pre></div>
+</div>
+</section>
+<section id="help">
+<h2>Help<a class="headerlink" href="#help" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>:help SearchTerm&lt;C-D&gt; - get a list of matching search terms</p></li>
+<li><p>:help Mode^V - search for help on &lt;C-V&gt; in specified mode - type caret and V not &lt;C-V&gt;</p></li>
+<li><p>:helpgrep SearchTerm - list files which match SearchTerm</p></li>
+</ul>
+</section>
+<section id="overlaying-command-maps">
+<h2>Overlaying command maps<a class="headerlink" href="#overlaying-command-maps" title="Link to this heading"></a></h2>
+<ul>
+<li><dl class="simple">
+<dt>References</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_1)">vim tutorial</a></p></li>
+<li><p><a class="reference external" href="https://romainl.github.io/the-patient-vimmer/2.html">vim keymap info</a></p></li>
+<li><p><a class="reference external" href="https://github.com/romainl/idiomatic-vimrc">write your own vimrc</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ashfinal/vimrc-config">nice looking vimrc</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Mapping ideas</dt><dd><ul class="simple">
+<li><p>how often is the function required</p></li>
+<li><p>difficulty of hitting the mapping keys - how many keys, how long does it take to type</p></li>
+<li><p>is it modal - only used in certain part of work</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>basic approach is to use the first letter of an operator in normal mode followed by a character which is not associated with a motion</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>List of such combinations</dt><dd><ul>
+<li><p>ca  cd  cm  co  cp  cq  cr  cu  cv  cx  cy  cz cA  cD  cO  cP  cQ  cR  cU  cV  cX  cY  cZ</p></li>
+<li><p>da  dc  dm  dq  dr  du  dv  dx  dy  dz dA  dC  dQ</p></li>
+<li><p>va  vc  vd  vm  vo  vp  vq  vr  vs  vu  vv  vx  vy  vz vA</p></li>
+<li><p>ya  yc  yd  ym  yo  yp  yq  yr  ys  yu  yv  yx  yz yA</p></li>
+<li><p>gb  gc  gl gB</p></li>
+<li><p>zp  zq  zu  zy</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>All function keys (and shifted) except &lt;F1&gt;</p></li>
+<li><p>, comma and _ underscore</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Leader key - written as &lt;leader&gt;, default /, :let mapleader=’,”</dt><dd><ul class="simple">
+<li><p>noremap &lt;leader&gt;W :w !sudo tee % &gt; /dev/null</p></li>
+<li><p>can give your own mappings a different namespace to vim’s</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Local leader key :let maplocalleader = “\”</dt><dd><ul class="simple">
+<li><p>special leader key meant to be based on filetype/buffer</p></li>
+<li><p>first is escape for vimscript</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Mapping command mode indicators</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>n  Normal mode map. Defined using &#39;:nmap&#39; or &#39;:nnoremap&#39;.
+i  Insert mode map. Defined using &#39;:imap&#39; or &#39;:inoremap&#39;.
+v  Visual and select mode map. Defined using &#39;:vmap&#39; or &#39;:vnoremap&#39;.
+x  Visual mode map. Defined using &#39;:xmap&#39; or &#39;:xnoremap&#39;.
+s  Select mode map. Defined using &#39;:smap&#39; or &#39;:snoremap&#39;.
+c  Command-line mode map. Defined using &#39;:cmap&#39; or &#39;:cnoremap&#39;.
+o  Operator pending mode map. Defined using &#39;:omap&#39; or &#39;:onoremap&#39;.
+&lt;Space&gt;  Normal, Visual and operator pending mode map. Defined using &#39;:map&#39; or &#39;:noremap&#39;.
+!  Insert and command-line mode map. Defined using &#39;map!&#39; or &#39;noremap!&#39;.
+</pre></div>
+</div>
+</li>
+<li><p>Mapping rhs indicators</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>  <span class="n">The</span> <span class="p">{</span><span class="n">rhs</span><span class="p">}</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">re</span><span class="o">-</span><span class="n">mappable</span><span class="o">.</span> <span class="n">Defined</span> <span class="n">using</span> <span class="n">the</span> <span class="s1">&#39;:noremap&#39;</span> <span class="ow">or</span> <span class="s1">&#39;:nnoremap&#39;</span> <span class="ow">or</span> <span class="s1">&#39;:inoremap&#39;</span><span class="p">,</span> <span class="n">etc</span><span class="o">.</span> <span class="n">commands</span><span class="o">.</span>
+<span class="o">&amp;</span>  <span class="n">Only</span> <span class="n">script</span> <span class="n">local</span> <span class="n">mappings</span> <span class="n">are</span> <span class="n">re</span><span class="o">-</span><span class="n">mappable</span> <span class="ow">in</span> <span class="n">the</span> <span class="p">{</span><span class="n">rhs</span><span class="p">}</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">map</span><span class="o">.</span> <span class="n">The</span> <span class="nb">map</span> <span class="n">command</span> <span class="n">has</span> <span class="n">the</span> <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span> <span class="n">attribute</span><span class="o">.</span>
+<span class="o">@</span>  <span class="n">A</span> <span class="n">buffer</span> <span class="n">local</span> <span class="nb">map</span> <span class="n">command</span> <span class="k">with</span> <span class="n">the</span> <span class="o">&lt;</span><span class="n">buffer</span><span class="o">&gt;</span> <span class="n">attribute</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>Redirecting vim command output</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:redir! &gt; vim_maps.txt
+:map
+:map!
+:redir END
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="quickfix">
+<h2>quickfix<a class="headerlink" href="#quickfix" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>:vimgrep remedy tickets/* # generate a quickfix list</p></li>
+<li><p>:copen  # open the quickfix list</p></li>
+<li><p>:cn :cp # goto previous location in quicklist</p></li>
+<li><p>:ccl # close quicklist- file explorers</p></li>
+</ul>
+</section>
+<section id="file-explorers">
+<h2>File Explorers<a class="headerlink" href="#file-explorers" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>netrw</dt><dd><ul>
+<li><p>Invoke - :e. :edit . :sp . :vsp .</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="visual-mode">
+<h2>Visual Mode<a class="headerlink" href="#visual-mode" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Character (v), Line (V), Block &lt;C-v&gt;</p></li>
+<li><p>Select text - arrows, movement</p></li>
+<li><p>Perform action e.g. y,d</p></li>
+</ul>
+</section>
+<section id="registers">
+<h2>Registers<a class="headerlink" href="#registers" title="Link to this heading"></a></h2>
+<ul>
+<li><p>:global/TODO/yank A # appends all lines that match TODO into register a</p></li>
+<li><p>:reg a - displays contents of register a</p></li>
+<li><p>capital letter register name appends the latest action to the lower case register name</p></li>
+<li><dl class="simple">
+<dt>special registers</dt><dd><ul class="simple">
+<li><p>numbered</p></li>
+<li><p>%</p></li>
+<li><p>named - identified by a letter of the alphabet as above</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>There are nine types of registers:          <em>registers</em> <em>E354</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">The</span> <span class="n">unnamed</span> <span class="n">register</span> <span class="s2">&quot;&quot;</span> <span class="o">-</span> <span class="n">populated</span> <span class="n">by</span> <span class="n">d</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span> <span class="n">last</span> <span class="n">used</span> <span class="n">register</span>
+<span class="o">*</span> <span class="mi">10</span> <span class="n">numbered</span> <span class="n">registers</span> <span class="s2">&quot;0 to &quot;</span><span class="mi">9</span> <span class="o">-</span> <span class="n">most</span> <span class="n">recently</span> <span class="n">deleted</span> <span class="n">text</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">small</span> <span class="n">delete</span> <span class="n">register</span> <span class="s2">&quot;- - deletions of less than one line</span>
+<span class="o">*</span> <span class="mi">26</span> <span class="n">named</span> <span class="n">registers</span> <span class="s2">&quot;a to &quot;</span><span class="n">z</span> <span class="ow">or</span> <span class="s2">&quot;A to &quot;</span><span class="n">Z</span> <span class="o">-</span> <span class="n">user</span> <span class="n">defined</span><span class="o">/</span><span class="n">specified</span> <span class="n">registers</span>
+<span class="o">*</span> <span class="n">three</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span> <span class="n">registers</span> <span class="s2">&quot;:, &quot;</span><span class="o">.</span><span class="p">,</span> <span class="s2">&quot;% - . (last inserted text) % (current filename) : (most recent executed cmd)</span>
+<span class="o">*</span> <span class="n">alternate</span> <span class="n">buffer</span> <span class="n">register</span> <span class="s2">&quot;# - alternate file for current window - most recent file in this buffer - switch with &lt;C-^&gt;</span>
+<span class="o">*</span> <span class="n">the</span> <span class="n">expression</span> <span class="n">register</span> <span class="s2">&quot;=</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">selection</span> <span class="ow">and</span> <span class="n">drop</span> <span class="n">registers</span> <span class="s2">&quot;*, &quot;</span><span class="o">+</span> <span class="ow">and</span> <span class="s2">&quot;~</span>
+<span class="o">*</span> <span class="n">The</span> <span class="n">black</span> <span class="n">hole</span> <span class="n">register</span> <span class="s2">&quot;_ - NOP - a spot to put something you cannot retrieve</span>
+<span class="o">*</span> <span class="n">Last</span> <span class="n">search</span> <span class="n">pattern</span> <span class="n">register</span> <span class="s2">&quot;/</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<section id="vim-notes-from-usr-txt-manuals">
+<h3>Vim Notes from usr*.txt manuals<a class="headerlink" href="#vim-notes-from-usr-txt-manuals" title="Link to this heading"></a></h3>
+</section>
+<section id="admin">
+<h3>Admin<a class="headerlink" href="#admin" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>for stuff based on vim user guide the best approach might be to write up the basic approach and give the help commands to find it e.g. :help help-summary</p></li>
+</ul>
+</section>
+<section id="from-usr-txt-manuals">
+<h3>From usr_*.txt manuals<a class="headerlink" href="#from-usr-txt-manuals" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>user manuals - task oriented</p></li>
+<li><p>reference manual - precise description of how everything works</p></li>
+<li><p>quickref - quick reference of vim commands</p></li>
+<li><p>index.txt - list of all vim commands in categories - reasonably well formatted</p></li>
+</ul>
+</section>
+<section id="using-the-manuals">
+<h3>using the manuals<a class="headerlink" href="#using-the-manuals" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>hyperlinks - &lt;C-]&gt; - jump to link, &lt;C-O&gt; return down chain of jumps - may need tags</p></li>
+<li><p>TODO how to create tags file for vim help and tag following</p></li>
+</ul>
+</section>
+<section id="check-vi-compatibility-set-compatible">
+<h3>check vi compatibility - :set compatible?<a class="headerlink" href="#check-vi-compatibility-set-compatible" title="Link to this heading"></a></h3>
+<p>:e! - replaces current file with it’s original version and continues editing</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>help</dt><dd><ul>
+<li><p>:help CTRL-A - type the letters don’t press the CTRL key</p></li>
+<li><p>:help index - list of all commands - probably index.txt file</p></li>
+<li><dl class="simple">
+<dt>:help i_CTRL-H - gives help for CTRL-H in insert mode - TODO list all mode codes</dt><dd><ul>
+<li><p>none (normal mode), i (insert), v(visual), c(command line)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>:help ‘number’ - gives help for the option number</p></li>
+<li><p>:help &lt;Up&gt; - gives help for special key Up</p></li>
+<li><p>:help E37 - help for error code</p></li>
+<li><p>see help-summary for all help options</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>getting around</dt><dd><ul>
+<li><p>set [no]number - set line numbering off/on</p></li>
+<li><p>&lt;C-F&gt;, &lt;C-B&gt; - scroll forward/backward a whole page</p></li>
+<li><p>zz,zt,zb - scroll current line to middle,top,bottom of window</p></li>
+<li><p>/&lt;Up&gt;|&lt;Down&gt; - scans through search history</p></li>
+<li><p>:&lt;Up&gt;|&lt;Down&gt; - scans through command history</p></li>
+<li><p>/&lt;the&gt; - search for “the” as a whole word .i.e. start &lt; and &gt; end of word</p></li>
+<li><p>set [no]hlsearch - highlight off/on for search</p></li>
+<li><p>:scriptnames - list all script names including path of .vimrc</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tmux.html" class="btn btn-neutral float-left" title="Tmux" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="xkb.html" class="btn btn-neutral float-right" title="X Keyboard Extension (xkb)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

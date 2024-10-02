@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipeline Data Format &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PowerBI" href="powerbi.html" />
+    <link rel="prev" title="Object Oriented" href="object.oriented.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pipeline Data Format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#concepts-to-use-for-pipeline-data-format">Concepts to use for pipeline data format</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ideas-in-common-use">Ideas in common use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-cases">Use Cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tools">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Pipeline Data Format</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/pipeline.data.format.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pipeline-data-format">
+<h1>Pipeline Data Format<a class="headerlink" href="#pipeline-data-format" title="Link to this heading"></a></h1>
+<p>Much of my work as a system administrator is reformatting the output of standard unix commands into something understandable by a program or script.  The pipeline concept is excellent and would be much more immediately useful if there was a standard data format used in the pipeline and that commands had an option to output that data format.  Within the code there will be an understanding of fields and meanings.  This can be so simply and efficiently output that it’s shocking this hasn’t occurred on a regular basis for standard unix tools.  Both humans and machines can be easily catered for by having a flag or environment variable to output in the appropriate format.  Having to reformat human readable format leaves much room for error.  Whilst I enjoy the challenge of the reformat why waste our time, repeatedly, doing this task.</p>
+<p>There are multiple formats already for transferring data e.g. json, xml.  My aim is to document one for the environment in which I usually work - the unix command line.  Something which is easily used with standard unix utilities.  There are many different configurations on the unix systems I work on, so even though there are nice utilities in languages like perl and python, these are not always available.  I’m aiming for a small toolkit using base unix tools.</p>
+<p>Much data is eventually for user consumption.  The various formats should be straight forward for humans to process.</p>
+<section id="concepts-to-use-for-pipeline-data-format">
+<h2>Concepts to use for pipeline data format<a class="headerlink" href="#concepts-to-use-for-pipeline-data-format" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>csv - very commonly used format for separating fields - which separator to use? - optional specification in file</p></li>
+<li><p>escaping - commonly used unix technique which is generally readable, aside the picket fence issue (could use ; - easy to type - not so often used in standard unix environment)</p></li>
+<li><p>standard ascii CO separators - FS (file - document), GS (group - page), RS (record), US (unit - field)</p></li>
+<li><p>multiple record types - many scripts/programs output multiple types of records - this is easily catered for with a record type field at the start of the record</p></li>
+<li><p>records are rows of (fairly) standard fields (columns) - some data is more complex and should probably use xml, json etc</p></li>
+<li><dl class="simple">
+<dt>headers/data types/representation/width - for each record type these can be useful.  Headers are the most common information required but field data type, required representation e.g. data type conversions and field width - could be incorporated into some line numbering scheme header (0), others (-1,-2,-3)</dt><dd><ul>
+<li><p>headers should be sortable to easily handle removing duplicate headers which can be produce by running the same command over multiple systems</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>timestamp/server - this can often be handy to identify the output</dt><dd><ul>
+<li><p>timestamp - yyyy-mm-dd hh:mm:ss.ttt tz</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>server name - don’t rely on sshm type wrappers to provide it</p></li>
+<li><p>conversion to other formats</p></li>
+<li><p>comment marker e.g. default #</p></li>
+<li><p>infile tags to specify comment marker, escape char and delimiter?</p></li>
+</ul>
+</section>
+<section id="ideas-in-common-use">
+<h2>Ideas in common use<a class="headerlink" href="#ideas-in-common-use" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>nmon data format</p></li>
+<li><p>csv</p></li>
+</ul>
+</section>
+<section id="use-cases">
+<h2>Use Cases<a class="headerlink" href="#use-cases" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>human written - use escaping to enter separators</p></li>
+<li><p>pipeline - convert separators to ascii CO separators - fields, subfields (not files, maybe records)</p></li>
+</ul>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h2>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>nl<span class="w"> </span>-w<span class="w"> </span><span class="m">10</span><span class="w"> </span>-n<span class="w"> </span>rz<span class="w"> </span>-s<span class="s2">&quot;,&quot;</span><span class="w"> </span><span class="c1"># generate line numbering</span>
+sed<span class="w"> </span><span class="s1">&#39;s/\(.\)/\1/g&#39;</span><span class="w">   </span><span class="c1"># convert any escaped character to it&#39;s original</span>
+sed<span class="w"> </span><span class="s1">&#39;s/\.\,/US/g&#39;</span><span class="w">   </span><span class="c1"># convert special escaped character to ascii CO separators</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$RecType</span><span class="s2">,0,FieldName1,FieldName2,...&quot;</span><span class="w">  </span><span class="c1"># Write header line</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="object.oriented.html" class="btn btn-neutral float-left" title="Object Oriented" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powerbi.html" class="btn btn-neutral float-right" title="PowerBI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

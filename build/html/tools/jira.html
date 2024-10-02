@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jira &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="nnn Notes" href="nnn.html" />
+    <link rel="prev" title="GPG" href="gpg.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Jira</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction-to-jira">Introduction to JIRA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planning-jira-setup">Planning JIRA Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-and-configuring-jira">Installing and Configuring JIRA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#project-setup">Project Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jira-query-language-jql">JIRA Query Language (JQL)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#administering-and-extending">Administering and Extending</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#summary-and-way-forward">Summary and Way Forward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Jira</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/jira.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="jira">
+<h1>Jira<a class="headerlink" href="#jira" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Based on Pluralsight “JIRA Fundamentals” Jan-Erik Sanberg <a class="reference external" href="https://app.pluralsight.com/course-player?clipId=2fe34194-7fe2-4cfe-9f84-01d2aaf44386">URL</a></p></li>
+</ul>
+<section id="introduction-to-jira">
+<h2>Introduction to JIRA<a class="headerlink" href="#introduction-to-jira" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Everything is in a project</p></li>
+<li><p>there are different issue types e.g. bug, story …</p></li>
+<li><p>Generally view your project through a dashboard view</p></li>
+</ul>
+</section>
+<section id="planning-jira-setup">
+<h2>Planning JIRA Setup<a class="headerlink" href="#planning-jira-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Server, Data Centre or Cloud</p></li>
+</ul>
+</section>
+<section id="installing-and-configuring-jira">
+<h2>Installing and Configuring JIRA<a class="headerlink" href="#installing-and-configuring-jira" title="Link to this heading"></a></h2>
+</section>
+<section id="project-setup">
+<h2>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Intro and basics</p></li>
+<li><dl class="simple">
+<dt>Basic setup documentation</dt><dd><ul>
+<li><p>Create new project</p></li>
+<li><dl class="simple">
+<dt>Select project type</dt><dd><ul>
+<li><p>Software Development - Scrum, Basic or Kanban</p></li>
+<li><p>Project Mgmt</p></li>
+<li><p>Process Mgmt</p></li>
+<li><p>Task Mgmt</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>View is via a board - cards (work) moveable between columns (status)</p></li>
+<li><p>Create sprints</p></li>
+<li><p>Add users</p></li>
+<li><p>Create groups</p></li>
+<li><dl class="simple">
+<dt>Components Tab - Add them</dt><dd><ul>
+<li><p>Subsection of a project</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>JIRA structure</dt><dd><ul>
+<li><p>Artifact</p></li>
+<li><p>Configuration</p></li>
+<li><p>Scheme - map configuration to issue type</p></li>
+<li><dl class="simple">
+<dt>Issue Types - Software Projects</dt><dd><ul>
+<li><p>Epic - big story, significant deliverable, new feature</p></li>
+<li><p>Bug - impairment to function of Product</p></li>
+<li><p>Story - user story, smallest unit of work to be done</p></li>
+<li><p>Task - work to be done</p></li>
+<li><p>Subtask - subcomponent of Task - work to be done</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Custom Fields Demonstration</dt><dd><ul>
+<li><p>Administration &gt; Issues &gt; Custom Field</p></li>
+<li><p>Add to screen(s) required</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Custom Issue Type Demonstration</dt><dd><ul>
+<li><p>Administration &gt; Issues &gt; Issue Type &gt; Create</p></li>
+<li><p>Administration &gt; Issues &gt; Scheme # also required</p></li>
+<li><p>Administration &gt; Issues &gt; Screen # also required</p></li>
+<li><p>Administration &gt; Issues &gt; ScreenScheme # also required</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>JIRA Workflow</dt><dd><ul>
+<li><p>Workflow Scheme - steps + transitions</p></li>
+<li><p>steps have status</p></li>
+<li><p>transitions - properties, triggers, conditions, validators, post functions</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Workflow Demonstration</dt><dd><ul>
+<li><p>New status - ready for QA</p></li>
+<li><p>Issue Attributes &gt; Statuses</p></li>
+<li><p>Workflows - can be active or inactive - then publish</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Summary</p></li>
+</ul>
+</section>
+<section id="jira-query-language-jql">
+<h2>JIRA Query Language (JQL)<a class="headerlink" href="#jira-query-language-jql" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Intro and JQL basics - filtering Issues</dt><dd><ul>
+<li><p>field operator value</p></li>
+<li><p>search box</p></li>
+<li><p>issues &gt; search # basic search</p></li>
+<li><p>go into list view</p></li>
+<li><p>select advanced next to search button</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Advanced Searching</dt><dd><ul>
+<li><p>keywords - AND, OR, NOT, EMPTY, NULL, ORDER BY</p></li>
+<li><p>operators - match (=, !=, &gt; etc) content (IN, NOT IN,CONTAINS ~, DOES NOT CONTAIN !~ )</p></li>
+<li><p>advanced operators - current (IS, IS NOT), Historic (WAS, WAS IN, WAS NOT IN, WAS NOT, CHANGED) - only selected fields where historic data is stored</p></li>
+<li><p>time - updated &gt; “2019-01-01”, updated &gt; -2w, updated &gt; -“4w 3d”</p></li>
+<li><p>functions - time, login, end of month</p></li>
+<li><p>description ~ web web* w??</p></li>
+<li><p>filters - saved query (Save As button) - filter=”BlueRobot Bugs”</p></li>
+<li><p>columns button used to add/remove columns</p></li>
+<li><p>Issues &gt; Manage Filters</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Reporting</dt><dd><ul>
+<li><p>options - built-in, templates usually add reports, Marketplace, Custom</p></li>
+<li><p>BYO reports - Atlassian Plugin SDK, Code, Deploy</p></li>
+<li><p>Reports icon on LHS</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Dashboards</dt><dd><ul>
+<li><p>add pre-built gadgets usually based on filters</p></li>
+<li><p>useful dashboards - actionable information, me first, important issues, team relevant, product, integrations</p></li>
+<li><p>dashboards &gt; manage dashboards &gt; create</p></li>
+<li><p>edit dashboard &gt; edit layout &gt; add gadget</p></li>
+<li><p>share dashboard</p></li>
+<li><p>set up wallboards slideshow - move through a set of dashboards</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Summary</p></li>
+</ul>
+</section>
+<section id="administering-and-extending">
+<h2>Administering and Extending<a class="headerlink" href="#administering-and-extending" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Routine followup - monitor users and remove if necessary, storage usage - remove unnecessary information, DB - optimise indexes</p></li>
+<li><dl class="simple">
+<dt>Effective Teams</dt><dd><ul>
+<li><p>Workflows - ensure they keep up with what you need</p></li>
+<li><p>3rd Party Tools - check for new Tools</p></li>
+<li><p>Projects - review more efficient templates</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Extending JIRA</dt><dd><ul>
+<li><p>Add-ons</p></li>
+<li><p>Listeners - event response</p></li>
+<li><p>Services - custom code, pull data from external systems</p></li>
+<li><dl class="simple">
+<dt>Webhooks - user defined http callback</dt><dd><ul>
+<li><p>requestb.in - for debugging</p></li>
+<li><p>JIRA &gt; Administration &gt; Webhooks - hook back to requestb.in</p></li>
+<li><p>Activate in JIRA and refresh to see data on requestb.in</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Evolving with JIRA</dt><dd><ul>
+<li><dl class="simple">
+<dt>JIRA Service Desk - customer Development</dt><dd><ul>
+<li><p>Administration &gt; Discover Application tab</p></li>
+<li><p>Project Templates</p></li>
+<li><p>JIRA &gt; Projects &gt; Customer Portal</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Confluence - deep integration with JIRA, documentation</dt><dd><ul>
+<li><p>Confluence space is similar to JIRA project</p></li>
+<li><p>From JIRA - More &gt; Link &gt; Confluence</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Statuspage - information when JIRA site is down</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="summary-and-way-forward">
+<h2>Summary and Way Forward<a class="headerlink" href="#summary-and-way-forward" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Avoid</dt><dd><ul>
+<li><p>Labels - may encourage poor practices - is there any other way to handle my requirements</p></li>
+<li><p>Interactions - ensure you still interact with humans</p></li>
+<li><p>Multiple truths - don’t let this happen - single source of truth</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Way Forward</dt><dd><ul>
+<li><p>integrate</p></li>
+<li><p>learn</p></li>
+<li><p>update JIRA constantly</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gpg.html" class="btn btn-neutral float-left" title="GPG" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="nnn.html" class="btn btn-neutral float-right" title="nnn Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

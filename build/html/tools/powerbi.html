@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerBI &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PowerQuery" href="powerquery.html" />
+    <link rel="prev" title="Pipeline Data Format" href="pipeline.data.format.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PowerBI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#powerbi-products">PowerBI Products</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-bi-concepts">Power BI Concepts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#capacities">Capacities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workspaces">Workspaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dataflows">Dataflows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasets">Datasets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reports">Reports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dashboards">Dashboards</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#workbooks">Workbooks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dashboard-components">Dashboard Components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx.starter.html">Sphinx RTD Starter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">PowerBI</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/powerbi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="powerbi">
+<h1>PowerBI<a class="headerlink" href="#powerbi" title="Link to this heading"></a></h1>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/power-bi/fundamentals/service-basic-concepts">Basic concepts for designers in the Power BI service</a></p></li>
+<li><p><a class="reference external" href="https://community.powerbi.com/t5/Community-Blog/Power-BI-Usage-Models-in-Pictures/ba-p/1342820">PowerBI in Pictures</a></p></li>
+</ul>
+<figure class="kroki kroki-plantuml align-default" id="id1">
+<img alt="&#64;startuml Capacity *-- Workspace Capacity : cpu Capacity : memory Capacity : storage  Workspace *-- Dashboard Dataset *-- Dataflow Dataflow *-- ExternalData : PowerBi Gateway Report *-- Dataset  Dashboard *-- Report &#64;enduml" class="kroki kroki-plantuml" src="../_images/kroki-33df6f443db24247bb06846cca5a3a3f4202aab0.svg" />
+<figcaption>
+<p><span class="caption-text">PowerBI Building Blocks</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<figure class="kroki kroki-plantuml align-default" id="id2">
+<img alt="&#64;startuml database &quot;Data Source&quot; {   frame &quot;Excel&quot; {     [baseline]   } } package &quot;PowerBI Desktop&quot; {   [Workspace] } [baseline] --&gt; [Workspace] cloud &quot;PowerBI Service&quot; {    [Service] } cloud &quot;PowerBI Report Server&quot; {    [Report] } [Workspace] --&gt; [Service] [Workspace] --&gt; [Report] package &quot;Delivery&quot; {    [User] } [Service] --&gt; [User] [Report] --&gt; [User] &#64;enduml" class="kroki kroki-plantuml" src="../_images/kroki-1b84d57a4a2690ee68a5f24ae2f2b048ceda42fd.svg" />
+<figcaption>
+<p><span class="caption-text">PowerBI Workflow</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="powerbi-products">
+<h2>PowerBI Products<a class="headerlink" href="#powerbi-products" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>PowerBI Desktop - build reports - PC based</p></li>
+<li><p>PowerBI Service - publish reports - SaaS (software as a service) cloud</p></li>
+<li><p>PowerBI Mobile Apps - view reports/dashboards - apps for Android, iOS, Windows Phone/Tablets</p></li>
+<li><p>PowerBI Gateway - sync data bidirectional onprem.  Also in Flows and PowerApps</p></li>
+<li><p>PowerBI Embedded - REST API to build dashboards/reports into custom apps.  Allows pushing data in real time and creating datasets and dashboards</p></li>
+<li><p>PowerBI Report Server - on-prem reporting solution for non-cloud data</p></li>
+<li><p>PowerBI Visuals Marketplace - custom visuals and R-powered visuals</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<ul>
+<li><p>Elements of PowerBI and how they work together</p></li>
+<li><p>Typical designer workflow - create reports in Desktop, publish to PowerBI Service, modify in Service.  Then create dashboards</p></li>
+<li><p>There are <a class="reference external" href="https://docs.microsoft.com/en-us/power-bi/create-reports/sample-datasets">Power BI Samples</a> to start with</p></li>
+<li><p>Power BI Service elements</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Navigation pane</p></li>
+<li><p>Microsoft 365 app launcher</p></li>
+<li><p>Power BI home button</p></li>
+<li><p>Icon buttons, including settings, help, and feedback</p></li>
+<li><p>Search box</p></li>
+<li><p>Favorited dashboards that you use the most</p></li>
+<li><p>Favorite and frequent dashboards, reports, and workspaces</p></li>
+<li><p>Reports built by the Power BI Community, picked by the Power BI team</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="power-bi-concepts">
+<h2>Power BI Concepts<a class="headerlink" href="#power-bi-concepts" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Capacities/Workspaces - resources and evironments for major building blocks</p></li>
+<li><dl class="simple">
+<dt>Major building blocks</dt><dd><ul>
+<li><p>datasets - sources of data DB, excel, flat file</p></li>
+<li><p>dataflows - optional automation of refreshing datasets from external</p></li>
+<li><p>workbooks - special handling of excel workbooks as datasets</p></li>
+<li><p>reports - combining one or more datasets into various analyses and presentations using DAX (Data Analysis Expressions)</p></li>
+<li><p>dashboards - combining multiple reports into a single pane</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<section id="capacities">
+<h3>Capacities<a class="headerlink" href="#capacities" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>set of resources (storage, cpu, memory) used to host &amp; deliver powerbi content</p></li>
+<li><p>capacities can be shared or dedicated (requires subscription)</p></li>
+</ul>
+</section>
+<section id="workspaces">
+<h3>Workspaces<a class="headerlink" href="#workspaces" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>created on capacities</p></li>
+<li><p>containers for major building blocks</p></li>
+<li><dl class="simple">
+<dt>two types</dt><dd><ul>
+<li><p>My workspace - personal workspace, can share your dashboards/reports</p></li>
+<li><dl class="simple">
+<dt>Workspaces - collaboration, share content, create an app</dt><dd><ul>
+<li><p>New workspaces - seem to be like a Workspaces but require less licensing???</p></li>
+<li><p>Create, publish, manage apps for your organisation</p></li>
+<li><p>Staging area/containers for content of Power BI app</p></li>
+<li><p>App - collection of dashboards and reports</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="dataflows">
+<h3>Dataflows<a class="headerlink" href="#dataflows" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Bring in data from disparate sources</p></li>
+<li><p>Prepared/staged data for datasets</p></li>
+<li><p>Use dedicated connectors</p></li>
+</ul>
+</section>
+<section id="datasets">
+<h3>Datasets<a class="headerlink" href="#datasets" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>collection of imported data or connection to data</p></li>
+<li><p>can source data from dataflows</p></li>
+<li><p>associated with one or more workspaces</p></li>
+<li><p>visualisations from one dataset can be on multiple dashboards</p></li>
+<li><p>powerbi doesn’t change underlying dataset</p></li>
+</ul>
+</section>
+<section id="reports">
+<h3>Reports<a class="headerlink" href="#reports" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>one or more pages of visualisations (visuals)</p></li>
+<li><p>visualisation examples - line charts, maps, tree maps</p></li>
+<li><p>all visualisations come from a single dataset</p></li>
+<li><p>reports - from scratch, from colleagues, from reports within datasets e.g. Power View in Excel</p></li>
+<li><p>two modes of interaction - reading or editing</p></li>
+<li><p>reports are listed under Content tab of a Workspace</p></li>
+<li><p>one report is contained in a single workspace</p></li>
+<li><p>one report can be associated with multiple dashboards within one workspace</p></li>
+<li><dl class="simple">
+<dt>number of datasources in a report</dt><dd><ul>
+<li><p>Power BI standard creates only one datasource per report</p></li>
+<li><p>Power BI standard can import a report from Power BI Desktop</p></li>
+<li><p>Power BI Desktop can create and use reports with multiple datasources</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="dashboards">
+<h3>Dashboards<a class="headerlink" href="#dashboards" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>single canvas containing zero or more tiles and widgets</p></li>
+<li><p>one tile pinned from a report displays a single visualisation from a dataset</p></li>
+<li><p>dashboard brings multiple relevant views into a single pane</p></li>
+<li><p>listed under content tab of the associated workspace</p></li>
+<li><p>one dashboard - single workspace</p></li>
+<li><p>one dashboard can display visualisations from multiple datasets and reports</p></li>
+</ul>
+</section>
+<section id="workbooks">
+<h3>Workbooks<a class="headerlink" href="#workbooks" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>special type of dataset for excel</p></li>
+<li><p>Get Data/Connect to excel (not Import)</p></li>
+<li><p>pin elements</p></li>
+<li><p>can enter Excel directly to edit spreadsheet</p></li>
+</ul>
+</section>
+</section>
+<section id="dashboard-components">
+<h2>Dashboard Components<a class="headerlink" href="#dashboard-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Navigation pane - locate/move to workspaces and building blocks - dashboard, report, workbook, dataset</p></li>
+<li><p>Canvas - displays dashboard visualisation tiles or widgets</p></li>
+<li><p>Q&amp;A question box - ask a question and Power BI gives a visualisation</p></li>
+<li><p>Icons in black header bar - settings, notifications, download, help</p></li>
+<li><p>Dashboard Title - active workspace and dashboard</p></li>
+<li><p>Microsoft 365 app launcher - 3x3 dot grid</p></li>
+<li><p>Power BI home - go back home (Power BI label)</p></li>
+<li><p>Labeled icons in gray menu bar - additional options for interacting with content</p></li>
+</ul>
+<img alt="../_images/powerbi.architecture.overview.png" src="../_images/powerbi.architecture.overview.png" />
+<img alt="../_images/powerbi.buildingblocks.png" src="../_images/powerbi.buildingblocks.png" />
+<img alt="../_images/powerbi.capacities.png" src="../_images/powerbi.capacities.png" />
+<img alt="../_images/powerbi.components.png" src="../_images/powerbi.components.png" />
+<img alt="../_images/powerbi.components.workspaces.png" src="../_images/powerbi.components.workspaces.png" />
+<img alt="../_images/powerbi.workspace.structure.jpg" src="../_images/powerbi.workspace.structure.jpg" />
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pipeline.data.format.html" class="btn btn-neutral float-left" title="Pipeline Data Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="powerquery.html" class="btn btn-neutral float-right" title="PowerQuery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

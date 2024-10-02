@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sphinx RTD Starter &mdash; CompInfo - RTD  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Splunk Fundamentals 1" href="splunk.fundamentals1.html" />
+    <link rel="prev" title="Shell Coding" href="shell.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            CompInfo - RTD
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../notes.html">Computer Infrastructure Information Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="RTD.html">RTD Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="RTD.ToolChain.html">RTD Tool Chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VisualStudioCode.html">Visual Studio Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="diagram.design.html">Diagram Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="freecad.html">FreeCAD Drawing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Git Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.managed.script.environment.html">Git managed script environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.recipes.html">Git Recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg.html">GPG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jira.html">Jira</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nnn.html">nnn Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="object.oriented.html">Object Oriented</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pipeline.data.format.html">Pipeline Data Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerbi.html">PowerBI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="powerquery.html">PowerQuery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shell.html">Shell Coding</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sphinx RTD Starter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current-repos">Current Repos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#functioning">Functioning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#non-functioning">Non-Functioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-rtd-simpleble-tutorial">Sphinx RTD simpleble Tutorial</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-repo-locally-and-push-to-github">Create Repo Locally and Push to GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fork-repo-access-both-local-origin-and-upstream">Fork Repo - access both local origin and upstream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#simple-test-setup-and-run">Simple test setup and run</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-rtd-base-setup">sphinx rtd base setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx-rtd-kroki-setup">sphinx rtd kroki setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requirements-txt">requirements.txt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#git-configuration">git configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-configuration">github configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#maltfield-config">maltfield config</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#rtd-configuration">rtd configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.fundamentals1.html">Splunk Fundamentals 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="splunk.search.html">Searching Splunk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiddlywiki.html">Tiddlywiki</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">Tmux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html">Vim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xkb.html">X Keyboard Extension (xkb)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../hardware/index.html">Hardware</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../operatingsystems/index.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other/index.html">Other</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CompInfo - RTD</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tools</a></li>
+      <li class="breadcrumb-item active">Sphinx RTD Starter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tools/sphinx.starter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sphinx-rtd-starter">
+<h1>Sphinx RTD Starter<a class="headerlink" href="#sphinx-rtd-starter" title="Link to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>How to use sphinx for documentation using RTD (Read The Docs) Theme</p></li>
+<li><p>Implementation of pipeline from local to shared GitHub/RTD sites</p></li>
+<li><p>Multiple document types with multiple users</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-rtd-tutorial.readthedocs.io/en/latest/read-the-docs.html">Sphinx-RTD Tutorial</a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/tutorial/getting-started.html">Lumache Starter (not RTD)</a></p></li>
+<li><p><a class="reference external" href="https://tutos.readthedocs.io/">Simple tutos config</a></p></li>
+<li><dl class="simple">
+<dt>Continuous Docmentation - GitHub - RTD</dt><dd><ul>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://tech.michaelaltfield.net/2020/07/18/sphinx-rtd-github-pages-1/">Continuous Docmentation - GitHub - RTD #1</a></dt><dd><ul>
+<li><p>Great ideas and scripts for full pipeline local &gt; github &gt; rtd</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://tech.michaelaltfield.net/2020/07/23/sphinx-rtd-github-pages-2/">Continuous Docmentation - GitHub - RTD #2</a></dt><dd><ul>
+<li><p>Ideas for versioning and internationalisation</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="current-repos">
+<h2>Current Repos<a class="headerlink" href="#current-repos" title="Link to this heading"></a></h2>
+<section id="functioning">
+<h3>Functioning<a class="headerlink" href="#functioning" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://unixgeexen-demo.readthedocs.io/en/latest/">https://unixgeexen-demo.readthedocs.io/en/latest/</a></dt><dd><ul>
+<li><p><a class="reference external" href="https://readthedocs.org/dashboard/">https://readthedocs.org/dashboard/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/readthedocs/template.git">https://github.com/readthedocs/template.git</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p><a class="reference external" href="https://unixgeexen.github.io/rtd-github-pages/">https://unixgeexen.github.io/rtd-github-pages/</a> # Altfield as github pages</p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-tutorial.readthedocs.io/en/latest/">https://sphinx-rtd-tutorial.readthedocs.io/en/latest/</a> # Howto</p></li>
+</ul>
+</section>
+<section id="non-functioning">
+<h3>Non-Functioning<a class="headerlink" href="#non-functioning" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>compinfo.rtd <a class="reference external" href="https://github.com/unixgeexen/compinfo.rtd.git">https://github.com/unixgeexen/compinfo.rtd.git</a></p></li>
+</ul>
+</section>
+</section>
+<section id="sphinx-rtd-simpleble-tutorial">
+<h2>Sphinx RTD simpleble Tutorial<a class="headerlink" href="#sphinx-rtd-simpleble-tutorial" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>cd /share/sites/sphinx</p></li>
+<li><p>python -m venv simpleble.tutorial</p></li>
+<li><p>source simpleble.tutorial/bin/activate</p></li>
+<li><p>python -m pip install sphinx sphinx-rtd-theme bluepy</p></li>
+<li><p>python -m pip freeze&gt;simpleble.tutorial.requirements.txt</p></li>
+<li><dl class="simple">
+<dt>git clone <a class="reference external" href="https://github.com/sglvladi/simpleble">https://github.com/sglvladi/simpleble</a></dt><dd><ul>
+<li><p>repository root - simpleble</p></li>
+<li><p>Sphinx root - simpleble/docs</p></li>
+<li><p>Sphinx source root - simpleble/docs/source</p></li>
+<li><p>Sphinx build root - simpleble/docs/build</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>cd simpleble</p></li>
+<li><p>cd docs</p></li>
+<li><p>make html</p></li>
+<li><p>setup .gitignore as below</p></li>
+<li><p>git config –global –add safe.directory /share/sites/sphinx/simpleble</p></li>
+<li><p>git add .</p></li>
+<li><p>git commit -am init</p></li>
+<li><p>git remote set-url origin <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:unixgeexen/sphinx-rtd-simpleble.git</p></li>
+<li><p>git push</p></li>
+<li><p>readthedocs &gt; import project &gt; refresh &gt; select github repo</p></li>
+<li><p>Also see <a class="reference external" href="https://docs.readthedocs.io/en/latest/integrations.html#continuous-documentation-deployment">https://docs.readthedocs.io/en/latest/integrations.html#continuous-documentation-deployment</a></p></li>
+</ul>
+</section>
+<section id="create-repo-locally-and-push-to-github">
+<h2>Create Repo Locally and Push to GitHub<a class="headerlink" href="#create-repo-locally-and-push-to-github" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>git init</p></li>
+<li><p>vi README.md</p></li>
+<li><p>git add .</p></li>
+<li><p>git commit -am “initial commit”</p></li>
+<li><p>GitHub &gt; New Repository &gt; Name &gt; description &gt; Create Repository</p></li>
+<li><p>Copy project URL blah.git</p></li>
+<li><p>git remote add origin blah.git</p></li>
+<li><p>git remote -v</p></li>
+<li><p>git push origin master</p></li>
+<li><p>git remote set-url origin <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:user/repository.git</p></li>
+</ul>
+</section>
+<section id="fork-repo-access-both-local-origin-and-upstream">
+<h2>Fork Repo - access both local origin and upstream<a class="headerlink" href="#fork-repo-access-both-local-origin-and-upstream" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>References</dt><dd><ul>
+<li><p><a class="reference external" href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">GitHub Fork Doc</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Process Summary</dt><dd><ul>
+<li><p>Fork upstream from GitHub web interface - fork button</p></li>
+<li><p>Get URL from your GitHub fork</p></li>
+<li><p>Clone your fork to local git clone <a class="reference external" href="https://github.com/YOUR-USERNAME/Spoon-Knife">https://github.com/YOUR-USERNAME/Spoon-Knife</a></p></li>
+<li><p>Add upstream remote to local git envt git remote add upstream <a class="reference external" href="https://github.com/ORIGINAL-OWNER/Spoon-Knife.git">https://github.com/ORIGINAL-OWNER/Spoon-Knife.git</a></p></li>
+<li><p>git remote -v # should show both upstream and origin remotes</p></li>
+<li><dl class="simple">
+<dt>Sync fork with upstream <a class="reference external" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork">https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork</a></dt><dd><ul>
+<li><p>git fetch upstream</p></li>
+<li><p>git checkout main</p></li>
+<li><p>git merge upstream/main</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Update upstream using pull request</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="simple-test-setup-and-run">
+<h2>Simple test setup and run<a class="headerlink" href="#simple-test-setup-and-run" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>SphinxDir=sphinx</p></li>
+<li><p>SphinxBaseDir=/share/sites/${SphinxDir}</p></li>
+<li><p>cd $SphinxBaseDir</p></li>
+<li><p>SphinxEnvt=base</p></li>
+<li><p>python -m venv sphinx.${SphinxEnvt}</p></li>
+<li><p>source sphinx.${SphinxEnvt}/bin/activate</p></li>
+<li><p>InstallPackages=”sphinx”</p></li>
+<li><p>python -m pip install ${InstallPackages}</p></li>
+<li><p>sphinx-build –version # check installation</p></li>
+<li><p>ProjectName=Quickstart</p></li>
+<li><p>ProjectAuthor=unixgeexen</p></li>
+<li><p>mkdir “${ProjectName}”</p></li>
+<li><p>cd “${ProjectName}”</p></li>
+<li><p>sphinx-quickstart –sep –project ${ProjectName} –author ${ProjectAuthor} –release 0.1 –language en . # create documentation layout</p></li>
+<li><p>sphinx-build -M html source/ build/</p></li>
+<li><p>ps -ef|grep http.server|grep -v grep</p></li>
+<li><p>starthttp</p></li>
+<li><p>echo “Browse to <a class="reference external" href="http://0.0.0.0:8080">http://0.0.0.0:8080</a>/${SphinxDir}/${ProjectName}/build/html/index.html “</p></li>
+<li><p><a class="reference external" href="http://0.0.0.0:8080/sphinx/docs/build/html/index.html">Browse site</a></p></li>
+<li><p>firefox -new-window <a class="reference external" href="http://0.0.0.0:8080">http://0.0.0.0:8080</a>/${SphinxDir}/${ProjectName}/build/html/index.html</p></li>
+<li><p>make html</p></li>
+<li><p>deactivate</p></li>
+<li><p>cd $SphinxBaseDir</p></li>
+<li><p>echo “# rm -rf ${SphinxBaseDir}/${ProjectName} # Clean up project”</p></li>
+<li><p>echo “# rm -rf ${SphinxBaseDir}/sphinx.${SphinxEnvt} # Clean up virtual env”</p></li>
+</ul>
+</section>
+<section id="sphinx-rtd-base-setup">
+<h2>sphinx rtd base setup<a class="headerlink" href="#sphinx-rtd-base-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>InstallPackages=”sphinx sphinx_rtd_theme”</p></li>
+<li><p>python -m pip install ${InstallPackages}</p></li>
+<li><p>source/conf.py - html_theme = ‘sphinx_rtd_theme’</p></li>
+</ul>
+</section>
+<section id="sphinx-rtd-kroki-setup">
+<h2>sphinx rtd kroki setup<a class="headerlink" href="#sphinx-rtd-kroki-setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>InstallPackages=”sphinx sphinx_rtd_theme setuptools sphinxcontrib-kroki”</p></li>
+<li><p>python -m pip install ${InstallPackages}</p></li>
+<li><p>source/conf.py - html_theme = ‘sphinx_rtd_theme’</p></li>
+</ul>
+</section>
+<section id="requirements-txt">
+<h2>requirements.txt<a class="headerlink" href="#requirements-txt" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>python -m pip install freeze &gt; /share/sites/sphinx/sphinx.kroki.requirements.txt # save requirements for an environment</p></li>
+<li><p>python -m pip install -r /path/to/requirements.txt # define in this environment</p></li>
+</ul>
+</section>
+<section id="git-configuration">
+<h2>git configuration<a class="headerlink" href="#git-configuration" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>sudo apt-get install -y git</p></li>
+<li><p>mkdir rtd-github-pages</p></li>
+<li><p>cd rtd-github-pages/</p></li>
+<li><p>mkdir docs</p></li>
+<li><p>git init</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat &gt; docs/.gitignore &lt;&lt;EOF</span>
+<span class="go">*.swp</span>
+<span class="go">/_build</span>
+<span class="go">/doctrees</span>
+<span class="go">EOF</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cat &gt; .gitignore &lt;&lt;EOF</span>
+<span class="go">__pycache__</span>
+<span class="go">*.pyc</span>
+<span class="go">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="github-configuration">
+<h2>github configuration<a class="headerlink" href="#github-configuration" title="Link to this heading"></a></h2>
+<section id="maltfield-config">
+<h3>maltfield config<a class="headerlink" href="#maltfield-config" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>fork <a class="reference external" href="https://github.com/maltfield/rtd-github-pages/tree/master">GitHub Repo</a></dt><dd><ul>
+<li><p>Dropdown fork &gt; enter your github repository &gt; fill in details &gt; create fork</p></li>
+<li><p>Your repo &gt; settings &gt; Pages &gt; Source (GitHub Actions)</p></li>
+<li><p>mkdir ; cd</p></li>
+<li><p>git clone <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:unixgeexen/rtd-github-pages.git</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+<section id="rtd-configuration">
+<h2>rtd configuration<a class="headerlink" href="#rtd-configuration" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://readthedocs.org/dashboard/">https://readthedocs.org/dashboard/</a></p></li>
+<li><p>import a project</p></li>
+<li><p>.readthedocs.yaml - requirements: doc/requirements.txt # in top level of Git repo</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="shell.html" class="btn btn-neutral float-left" title="Shell Coding" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="splunk.fundamentals1.html" class="btn btn-neutral float-right" title="Splunk Fundamentals 1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Unix Geexen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
